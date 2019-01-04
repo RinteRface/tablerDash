@@ -1,2 +1,2 @@
 # tablerDash
-tabler dashboard template for shiny
+> tabler dashboard template for shiny
