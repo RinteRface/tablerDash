@@ -99,9 +99,7 @@ tablerNavMenuItem <- function(..., tabName = NULL, icon = NULL) {
       `data-toggle` = "tab",
       `data-value` = tabName,
       shiny::tags$i(class = paste0("fe fe-", icon)),
-      shiny::tags$p(
-        ...
-      )
+      ...
     )
   )
 }

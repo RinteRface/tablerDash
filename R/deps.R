@@ -16,12 +16,13 @@ addDeps <- function(x) {
 
   tablerDash_js <- "dashboard.js"
   tablerDash_css <- "dashboard.css"
+  init_js <- "init.js"
 
   require_js <- "require.min.js"
   core_js <- "core.js"
 
   bootstrap_js <- "bootstrap.bundle.min.js"
-  fontawesome_css <- "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  fontawesome_css <- "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/"
   google_fonts <- "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&subset=latin-ext"
 
   dashboardDeps <- list(
@@ -30,7 +31,7 @@ addDeps <- function(x) {
       name = "tablerDash",
       version = "0.1.0",
       src = c(file = system.file("tablerDash-0.1.0", package = "tablerDash")),
-      script = c(tablerDash_js, require_js, core_js),
+      script = c(init_js, require_js, tablerDash_js, core_js),
       stylesheet = tablerDash_css
     ),
     # fontawesome
@@ -38,7 +39,7 @@ addDeps <- function(x) {
       name = "fontawesome",
       version = as.character(utils::packageVersion("tablerDash")),
       src = c(href = fontawesome_css),
-      stylesheet = ""
+      stylesheet = "font-awesome.min.css"
     ),
     # google fonts
     htmltools::htmlDependency(
