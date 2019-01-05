@@ -5,7 +5,8 @@
 \title{Create a Boostrap 4 card}
 \usage{
 tablerCard(..., title = NULL, options = NULL, footer = NULL,
-  status = NULL, statusSide = c("top", "left"))
+  status = NULL, statusSide = c("top", "left"), collapsible = TRUE,
+  collapsed = FALSE, closable = TRUE, zoomable = TRUE)
 }
 \arguments{
 \item{...}{Body content}
@@ -19,6 +20,14 @@ tablerCard(..., title = NULL, options = NULL, footer = NULL,
 \item{status}{Card status. NULL by default. See \link{https://preview.tabler.io/docs/colors.html} for valid statuses.}
 
 \item{statusSide}{Status side: "top" or "left".}
+
+\item{collapsible}{Whether the card is collapsible. TRUE by default.}
+
+\item{collapsed}{Whether to collapse the card at start. FALSE by default.}
+
+\item{closable}{Whether the card is closable. TRUE by default.}
+
+\item{zoomable}{Whether the card is zoomable. TRUE by default.}
 }
 \description{
 Build a tabler card
