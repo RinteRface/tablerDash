@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 card}
 \usage{
 tablerCard(..., title = NULL, options = NULL, footer = NULL,
-  status = NULL)
+  status = NULL, statusSide = c("top", "left"))
 }
 \arguments{
 \item{...}{Body content}
@@ -17,6 +17,8 @@ tablerCard(..., title = NULL, options = NULL, footer = NULL,
 \item{footer}{Card footer. NULL by default. Not displayed if NULL.}
 
 \item{status}{Card status. NULL by default. See \link{https://preview.tabler.io/docs/colors.html} for valid statuses.}
+
+\item{statusSide}{Status side: "top" or "left".}
 }
 \description{
 Build a tabler card
@@ -35,7 +37,8 @@ if(interactive()){
      tablerCard(
       title = "Card",
       "Inside the card",
-      status = "success"
+      status = "success",
+      statusSide = "left"
      )
     )
    ),

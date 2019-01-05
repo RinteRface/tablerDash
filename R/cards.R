@@ -7,6 +7,7 @@
 #' @param options Card extra header elements.
 #' @param footer Card footer. NULL by default. Not displayed if NULL.
 #' @param status Card status. NULL by default. See \link{https://preview.tabler.io/docs/colors.html} for valid statuses.
+#' @param statusSide Status side: "top" or "left".
 #'
 #' @examples
 #' if(interactive()){
@@ -22,7 +23,8 @@
 #'      tablerCard(
 #'       title = "Card",
 #'       "Inside the card",
-#'       status = "success"
+#'       status = "success",
+#'       statusSide = "left"
 #'      )
 #'     )
 #'    ),
@@ -34,10 +36,20 @@
 #'
 #' @export
 tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
-                       status = NULL) {
+                       status = NULL, statusSide = c("top", "left")) {
+
+  statusSide <- match.arg(statusSide)
+
+  statusCl <- if (!is.null(status)) paste0("card-status bg-", status)
+  if (!is.null(status)) {
+    if (statusSide == "left") {
+      statusCl <- paste0(statusCl , " card-status-left")
+    }
+  }
+
   shiny::tags$div(
     class = "card",
-    if (!is.null(status)) shiny::tags$div(class = paste0("card-status bg-", status)),
+    if (!is.null(status)) shiny::tags$div(class = statusCl),
     # header
     if (!is.null(title)) {
       shiny::tags$div(
