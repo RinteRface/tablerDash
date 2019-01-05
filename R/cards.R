@@ -252,36 +252,77 @@ tablerInfoCard <- function(value, description = NULL, status,
 
 
 
-# #' Create a Boostrap 4 media card
-# #'
-# #' Build a tabler media card
-# #'
-# #' @param
-# #'
-# #' @examples
-# #' if(interactive()){
-# #'  library(shiny)
-# #'  library(tablerDash)
-# #'
-# #'  shiny::shinyApp(
-# #'    ui = tablerDashPage(
-# #'     navbar = NULL,
-# #'     footer = NULL,
-# #'     title = "test",
-# #'     body = tablerDashBody(
-# #'      tablerMediaCard(
-# #'
-# #'      )
-# #'     )
-# #'    ),
-# #'    server = function(input, output) {}
-# #'  )
-# #' }
-# #'
-# #' @author David Granjon, \email{dgranjon@@ymail.com}
-# #'
-# #' @export
-# tablerMediaCard <- function() {
-#
-# }
-#
+#' Create a Boostrap 4 media card
+#'
+#' Build a tabler media card
+#'
+#' @param ... Any other elements.
+#' @param title Title.
+#' @param date Date.
+#' @param href External link.
+#' @param src Image url.
+#' @param avatarUrl Avatar image.
+#' @param width Card width. 4 by default.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerMediaCard(
+#'       title = "Media Card",
+#'       date = "Today",
+#'       href = "https://www.google.com",
+#'       src = "https://preview.tabler.io/demo/photos/matt-barrett-339981-500.jpg",
+#'       avatarUrl = "https://image.flaticon.com/icons/svg/145/145842.svg",
+#'       width = 6
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerMediaCard <- function(..., title = NULL, date = NULL, href = NULL,
+                            src = NULL, avatarUrl = NULL, width = 4) {
+
+  shiny::column(
+    width = width,
+    shiny::tags$div(
+      class = "card p-3",
+      # image
+      shiny::tags$a(
+        href = if (!is.null(href)) href else "javascript:void(0)",
+        class = "mb-3",
+        shiny::img(src = src, class = "rounded")
+      ),
+      # content
+      shiny::tags$div(
+        class = "d-flex align-items-center px-2",
+        shiny::tagAppendAttributes(
+          tablerAvatar(
+            url = avatarUrl,
+            size = "md"
+          ),
+          class = "mr-3"
+        ),
+        shiny::tags$div(
+          shiny::tags$div(title),
+          htmltools::tags$small(class = "d-block text-muted", date)
+        ),
+        # other elements
+        shiny::tags$div(class = "ml-auto text-muted", ...)
+      )
+    )
+  )
+
+}
