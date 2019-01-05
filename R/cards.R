@@ -248,3 +248,40 @@ tablerInfoCard <- function(value, description = NULL, status,
     )
   )
 }
+
+
+
+
+# #' Create a Boostrap 4 media card
+# #'
+# #' Build a tabler media card
+# #'
+# #' @param
+# #'
+# #' @examples
+# #' if(interactive()){
+# #'  library(shiny)
+# #'  library(tablerDash)
+# #'
+# #'  shiny::shinyApp(
+# #'    ui = tablerDashPage(
+# #'     navbar = NULL,
+# #'     footer = NULL,
+# #'     title = "test",
+# #'     body = tablerDashBody(
+# #'      tablerMediaCard(
+# #'
+# #'      )
+# #'     )
+# #'    ),
+# #'    server = function(input, output) {}
+# #'  )
+# #' }
+# #'
+# #' @author David Granjon, \email{dgranjon@@ymail.com}
+# #'
+# #' @export
+# tablerMediaCard <- function() {
+#
+# }
+#
