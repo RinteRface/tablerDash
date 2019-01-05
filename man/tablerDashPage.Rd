@@ -26,8 +26,8 @@ if(interactive()){
 
  shiny::shinyApp(
    ui = tablerDashPage(
-    navbar = tablerDashNavbar(),
-    footer = btablerDashFooter(),
+    navbar = tablerDashNav(),
+    footer = tablerDashFooter(),
     title = "test",
     body = tablerDashBody()
    ),

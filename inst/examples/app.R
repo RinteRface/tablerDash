@@ -1,6 +1,8 @@
 library(shiny)
 library(tablerDash)
 
+options(shiny.trace = TRUE)
+
 shiny::shinyApp(
   ui = tablerDashPage(
     navbar = tablerDashNav(
