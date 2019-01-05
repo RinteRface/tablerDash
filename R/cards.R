@@ -116,3 +116,135 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
   if (!is.null(width)) shiny::column(width = width, cardTag) else cardTag
 
 }
+
+
+
+
+#' Create a Boostrap 4  stat card
+#'
+#' Build a tabler stat card
+#'
+#' @param value Card value.
+#' @param title Card title.
+#' @param trend Percentage increase/decrease.
+#' @param width Card width. 3 by default.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerStatCard(
+#'       value = 43,
+#'       title = "Followers",
+#'       trend = -10
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerStatCard <- function(value, title, trend = NULL, width = 3) {
+
+  color <- ifelse(trend > 0, "green", "red")
+
+  shiny::column(
+    width = width,
+    shiny::tags$div(
+      class = "card",
+      shiny::tags$div(
+        class = "card-body p-3 text-center",
+        if (!is.null(trend)) {
+          shiny::tags$div(
+            class = paste0("text-right text-", color),
+            paste0(trend, "%"),
+            if (trend > 0) {
+              shiny::tags$i(class = "fe fe-chevron-up")
+            } else {
+              shiny::tags$i(class = "fe fe-chevron-down")
+            }
+          )
+        },
+        shiny::tags$div(class = "h1 m-0", value),
+        shiny::tags$div(class = "text-muted mb-4", title)
+      )
+    )
+  )
+}
+
+
+
+
+#' Create a Boostrap 4 info card
+#'
+#' Build a tabler info card
+#'
+#' @param value Card value.
+#' @param description Percentage increase/decrease.
+#' @param status Card status.
+#' @param icon Card icon.
+#' @param href External link.
+#' @param width Card width. 4 by default.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerInfoCard(
+#'       value = "132 sales",
+#'       status = "danger",
+#'       icon = "dollar-sign",
+#'       description = "12 waiting payments"
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerInfoCard <- function(value, description = NULL, status,
+                           icon, href = NULL, width = 4) {
+
+  shiny::column(
+    width = width,
+    shiny::tags$div(
+      class = "card p-3",
+      # stamp
+      shiny::tags$div(
+        class = "d-flex align-items-center",
+        shiny::tags$span(
+          class = paste0("stamp stamp-md mr-3 bg-", status),
+          shiny::tags$i(class = paste0("fe fe-", icon))
+        ),
+        # body
+        shiny::tags$div(
+          shiny::tags$h4(
+            class = "m-0",
+            shiny::tags$a(href = if (!is.null(href)) href else "#", value)
+          ),
+          htmltools::tags$small(class = "text-muted", description)
+        )
+      )
+    )
+  )
+}
