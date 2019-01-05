@@ -12,6 +12,8 @@
 #' @param collapsed Whether to collapse the card at start. FALSE by default.
 #' @param closable Whether the card is closable. TRUE by default.
 #' @param zoomable Whether the card is zoomable. TRUE by default.
+#' @param width Card width. 6 by default. See Bootstrap grid system. If NULL, the card is
+#' full width.
 #'
 #' @examples
 #' if(interactive()){
@@ -26,13 +28,20 @@
 #'     body = tablerDashBody(
 #'      tablerCard(
 #'       title = "Card",
-#'       "Inside the card",
+#'       sliderInput("obs", "Number of observations:",
+#'       min = 0, max = 1000, value = 500
+#'       ),
+#'       plotOutput("distPlot"),
 #'       status = "success",
 #'       statusSide = "left"
 #'      )
 #'     )
 #'    ),
-#'    server = function(input, output) {}
+#'    server = function(input, output) {
+#'    output$distPlot <- renderPlot({
+#'     hist(rnorm(input$obs))
+#'    })
+#'   }
 #'  )
 #' }
 #'
@@ -42,7 +51,7 @@
 tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
                        status = NULL, statusSide = c("top", "left"),
                        collapsible = TRUE, collapsed = FALSE, closable = TRUE,
-                       zoomable = TRUE) {
+                       zoomable = TRUE, width = 6) {
 
   statusSide <- match.arg(statusSide)
 
@@ -56,7 +65,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
   cardCl <- "card"
   if (collapsed) cardCl <- paste0(cardCl, " card-collapsed")
 
-  shiny::tags$div(
+  cardTag <- shiny::tags$div(
     class = cardCl,
     if (!is.null(status)) shiny::tags$div(class = statusCl),
     # header
@@ -68,6 +77,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
         # card toolbox and other elements such as buttons, ...
         shiny::tags$div(
           class = "card-options",
+          if (!is.null(options)) options,
           if (collapsible) {
             shiny::tags$a(
               href = "#",
@@ -93,8 +103,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
               `data-toggle` = "card-remove",
               shiny::tags$i(class = "fe fe-x")
             )
-          },
-          if (!is.null(options)) options
+          }
         )
       )
     },
@@ -103,4 +112,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
     # footer
     if (!is.null(footer)) shiny::tags$div(class = "card-footer", footer)
   )
+
+  if (!is.null(width)) shiny::column(width = width, cardTag) else cardTag
+
 }

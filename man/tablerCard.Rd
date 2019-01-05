@@ -6,7 +6,7 @@
 \usage{
 tablerCard(..., title = NULL, options = NULL, footer = NULL,
   status = NULL, statusSide = c("top", "left"), collapsible = TRUE,
-  collapsed = FALSE, closable = TRUE, zoomable = TRUE)
+  collapsed = FALSE, closable = TRUE, zoomable = TRUE, width = 6)
 }
 \arguments{
 \item{...}{Body content}
@@ -28,6 +28,9 @@ tablerCard(..., title = NULL, options = NULL, footer = NULL,
 \item{closable}{Whether the card is closable. TRUE by default.}
 
 \item{zoomable}{Whether the card is zoomable. TRUE by default.}
+
+\item{width}{Card width. 6 by default. See Bootstrap grid system. If NULL, the card is
+full width.}
 }
 \description{
 Build a tabler card
@@ -45,13 +48,20 @@ if(interactive()){
     body = tablerDashBody(
      tablerCard(
       title = "Card",
-      "Inside the card",
+      sliderInput("obs", "Number of observations:",
+      min = 0, max = 1000, value = 500
+      ),
+      plotOutput("distPlot"),
       status = "success",
       statusSide = "left"
      )
     )
    ),
-   server = function(input, output) {}
+   server = function(input, output) {
+   output$distPlot <- renderPlot({
+    hist(rnorm(input$obs))
+   })
+  }
  )
 }
 
