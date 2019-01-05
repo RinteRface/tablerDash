@@ -2,7 +2,7 @@
 #'
 #' Build a tabler icon
 #'
-#' @param name Name of icon. See \link{https://preview.tabler.io/icons.html} for all valid icons.
+#' @param name Name of icon. See \url{https://preview.tabler.io/icons.html} for all valid icons.
 #' @param lib Icon library ("feather", "font-awesome", "flag", "payment").
 #'
 #' @author David Granjon, \email{dgranjon@@ymail.com}

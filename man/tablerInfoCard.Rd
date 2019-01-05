@@ -12,7 +12,7 @@ tablerInfoCard(value, description = NULL, status, icon, href = NULL,
 
 \item{description}{Percentage increase/decrease.}
 
-\item{status}{Card status.}
+\item{status}{Card status. See \url{https://preview.tabler.io/docs/colors.html}.}
 
 \item{icon}{Card icon.}
 

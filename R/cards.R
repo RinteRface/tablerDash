@@ -6,7 +6,7 @@
 #' @param title Card title. If NULL, the header is not displayed.
 #' @param options Card extra header elements.
 #' @param footer Card footer. NULL by default. Not displayed if NULL.
-#' @param status Card status. NULL by default. See \link{https://preview.tabler.io/docs/colors.html} for valid statuses.
+#' @param status Card status. NULL by default. See \url{https://preview.tabler.io/docs/colors.html} for valid statuses.
 #' @param statusSide Status side: "top" or "left".
 #' @param collapsible Whether the card is collapsible. TRUE by default.
 #' @param collapsed Whether to collapse the card at start. FALSE by default.
@@ -191,7 +191,7 @@ tablerStatCard <- function(value, title, trend = NULL, width = 3) {
 #'
 #' @param value Card value.
 #' @param description Percentage increase/decrease.
-#' @param status Card status.
+#' @param status Card status. See \url{https://preview.tabler.io/docs/colors.html}.
 #' @param icon Card icon.
 #' @param href External link.
 #' @param width Card width. 4 by default.

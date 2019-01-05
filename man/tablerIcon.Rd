@@ -7,7 +7,7 @@
 tablerIcon(name, lib = c("feather", "font-awesome", "flag", "payment"))
 }
 \arguments{
-\item{name}{Name of icon. See \link{https://preview.tabler.io/icons.html} for all valid icons.}
+\item{name}{Name of icon. See \url{https://preview.tabler.io/icons.html} for all valid icons.}
 
 \item{lib}{Icon library ("feather", "font-awesome", "flag", "payment").}
 }

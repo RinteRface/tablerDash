@@ -140,9 +140,9 @@ tablerAvatarList <- function(..., stacked = FALSE) {
 #' @param name Avatar placeholder. If not NULL, url cannot be used.
 #' @param url Avatar image if any. If not NULL, name cannot be used.
 #' @param size Avatar size. NULL, "sm", "md", "lg", "xl" or "xxl".
-#' @param status Avatar status. See \link{https://preview.tabler.io/docs/colors.html}
+#' @param status Avatar status. See \url{https://preview.tabler.io/docs/colors.html}
 #' for valid statuses.
-#' @param color Avatar background color. See \link{https://preview.tabler.io/docs/colors.html}
+#' @param color Avatar background color. See \url{https://preview.tabler.io/docs/colors.html}
 #' for valid colors.
 #'
 #' @examples
@@ -246,9 +246,9 @@ tablerTagList <- function(...) {
 #' @param name Tag name.
 #' @param href Tag external link.
 #' @param rounded Whether the tag is rounded. FALSE by default.
-#' @param color Tag color. See \link{https://preview.tabler.io/docs/colors.html}.
+#' @param color Tag color. See \url{https://preview.tabler.io/docs/colors.html}.
 #' @param addon Tag addon (right side).
-#' @param addonColor Addon background color. See \link{https://preview.tabler.io/docs/colors.html}.
+#' @param addonColor Addon background color. See \url{https://preview.tabler.io/docs/colors.html}.
 #'
 #' @examples
 #' if(interactive()){
@@ -313,4 +313,72 @@ tablerTag <- function(name, href = NULL, rounded = FALSE, color = NULL,
       )
     }
   }
+}
+
+
+
+
+#' Create a Boostrap 4 alert
+#'
+#' Build a tabler alert
+#'
+#' @param ... Alert content.
+#' @param title Alert title.
+#' @param status Alert status. See \url{https://preview.tabler.io/docs/colors.html}.
+#' @param icon Alert icon.
+#' @param closable Whether to close the alert. TRUE by default.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerAlert(
+#'       title = "Alert",
+#'       "Lorem ipsum dolor sit amet, consectetur
+#'       adipisicing elit. Lorem ipsum dolor sit
+#'       amet, consectetur adipisicing elit.
+#'       Lorem ipsum dolor sit amet, consectetur
+#'       adipisicing elit.",
+#'       icon = "alert-triangle",
+#'       status = "info"
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerAlert <- function(..., title = NULL, status, icon = NULL, closable = TRUE) {
+
+  alertCl <- paste0("alert alert-", status)
+  if (!is.null(icon)) alertCl <- paste0(alertCl, " alert-icon")
+  if (closable) alertCl <- paste0(alertCl, " alert-dismissible")
+
+  shiny::tags$div(
+    class = alertCl,
+    role = "alert",
+    if (!is.null(title)) shiny::tags$h4(title),
+    # closable or not
+    if (closable) {
+      shiny::tags$button(
+        type = "button",
+        class = "close", `data-dismiss` = "alert"
+      )
+    },
+    shiny::tagAppendAttributes(
+      tablerIcon(name = icon, lib = "feather"),
+      `aria-hidden` = "true"
+    ),
+    ...
+  )
 }

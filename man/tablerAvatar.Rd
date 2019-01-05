@@ -14,10 +14,10 @@ tablerAvatar(name = NULL, url = NULL, size = NULL, status = NULL,
 
 \item{size}{Avatar size. NULL, "sm", "md", "lg", "xl" or "xxl".}
 
-\item{status}{Avatar status. See \link{https://preview.tabler.io/docs/colors.html}
+\item{status}{Avatar status. See \url{https://preview.tabler.io/docs/colors.html}
 for valid statuses.}
 
-\item{color}{Avatar background color. See \link{https://preview.tabler.io/docs/colors.html}
+\item{color}{Avatar background color. See \url{https://preview.tabler.io/docs/colors.html}
 for valid colors.}
 }
 \description{

@@ -14,11 +14,11 @@ tablerTag(name, href = NULL, rounded = FALSE, color = NULL,
 
 \item{rounded}{Whether the tag is rounded. FALSE by default.}
 
-\item{color}{Tag color. See \link{https://preview.tabler.io/docs/colors.html}.}
+\item{color}{Tag color. See \url{https://preview.tabler.io/docs/colors.html}.}
 
 \item{addon}{Tag addon (right side).}
 
-\item{addonColor}{Addon background color. See \link{https://preview.tabler.io/docs/colors.html}.}
+\item{addonColor}{Addon background color. See \url{https://preview.tabler.io/docs/colors.html}.}
 }
 \description{
 Build a tabler tag

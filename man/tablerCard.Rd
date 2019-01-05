@@ -17,7 +17,7 @@ tablerCard(..., title = NULL, options = NULL, footer = NULL,
 
 \item{footer}{Card footer. NULL by default. Not displayed if NULL.}
 
-\item{status}{Card status. NULL by default. See \link{https://preview.tabler.io/docs/colors.html} for valid statuses.}
+\item{status}{Card status. NULL by default. See \url{https://preview.tabler.io/docs/colors.html} for valid statuses.}
 
 \item{statusSide}{Status side: "top" or "left".}
 
