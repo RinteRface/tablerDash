@@ -83,7 +83,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
               href = "#",
               class = "card-options-collapse",
               `data-toggle` = "card-collapse",
-              shiny::tags$i(class = "fe fe-chevron-up")
+              tablerIcon(name = "chevron-up", lib = "feather")
             )
           },
           if (zoomable) {
@@ -92,7 +92,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
                 href = "#",
                 class = "card-options-fullscreen",
                 `data-toggle` = "card-fullscreen",
-                shiny::tags$i(class = "fe fe-maximize")
+                tablerIcon(name = "maximize", lib = "feather")
               )
             }
           },
@@ -101,7 +101,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
               href = "#",
               class = "card-options-remove",
               `data-toggle` = "card-remove",
-              shiny::tags$i(class = "fe fe-x")
+              tablerIcon(name = "x", lib = "feather")
             )
           }
         )
@@ -169,9 +169,9 @@ tablerStatCard <- function(value, title, trend = NULL, width = 3) {
             class = paste0("text-right text-", color),
             paste0(trend, "%"),
             if (trend > 0) {
-              shiny::tags$i(class = "fe fe-chevron-up")
+              tablerIcon(name = "chevron-up", lib = "feather")
             } else {
-              shiny::tags$i(class = "fe fe-chevron-down")
+              tablerIcon(name = "chevron-down", lib = "feather")
             }
           )
         },
@@ -234,7 +234,7 @@ tablerInfoCard <- function(value, description = NULL, status,
         class = "d-flex align-items-center",
         shiny::tags$span(
           class = paste0("stamp stamp-md mr-3 bg-", status),
-          shiny::tags$i(class = paste0("fe fe-", icon))
+          tablerIcon(name = icon, lib = "feather")
         ),
         # body
         shiny::tags$div(
