@@ -197,3 +197,120 @@ tablerAvatar <- function(name = NULL, url = NULL,
     if (!is.null(status)) shiny::tags$span(class = paste0("avatar-status bg-", status))
   )
 }
+
+
+
+
+#' Create a Boostrap 4 tag list
+#'
+#' Build a tabler tag list
+#'
+#' @param ... Slot for \link{tablerTag}.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerTagList(
+#'       lapply(X = 1:5, FUN = function(i) {
+#'        tablerTag(name = i)
+#'       })
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerTagList <- function(...) {
+  shiny::tags$div(class = "tags", ...)
+}
+
+
+
+
+#' Create a Boostrap 4 tag
+#'
+#' Build a tabler tag
+#'
+#' @param name Tag name.
+#' @param href Tag external link.
+#' @param rounded Whether the tag is rounded. FALSE by default.
+#' @param color Tag color. See \link{https://preview.tabler.io/docs/colors.html}.
+#' @param addon Tag addon (right side).
+#' @param addonColor Addon background color. See \link{https://preview.tabler.io/docs/colors.html}.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerTag(name = "Tag"),
+#'      tablerTag(name = "Tag", href = "https://www.google.com"),
+#'      tablerTag(name = "Tag", rounded = TRUE, color = "pink"),
+#'      tablerTag(
+#'       name = "npm",
+#'       href = "https://www.google.com",
+#'       color = "dark",
+#'       addon = "passing",
+#'       addonColor = "warning"
+#'      ),
+#'      tablerTag(name = "build", addon = "passing", addonColor = "success")
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerTag <- function(name, href = NULL, rounded = FALSE, color = NULL,
+                      addon = NULL, addonColor = NULL) {
+
+  tagCl <- "tag"
+  if (rounded) tagCl <- paste0(tagCl, " tag-rounded")
+  if (!is.null(color)) tagCl <- paste0(tagCl, " tag-", color)
+
+  addonCl <- "tag-addon"
+  if (!is.null(addonColor)) addonCl <- paste0(addonCl, " tag-", addonColor)
+
+  if (!is.null(href)) {
+    shiny::tags$a(
+      href = href,
+      target = "_blank",
+      class = tagCl,
+      name,
+      if (!is.null(addon)) shiny::tags$span(class = addonCl, addon)
+    )
+  } else {
+    if (!is.null(addon)) {
+      shiny::tags$div(
+        class = tagCl,
+        name,
+        shiny::tags$span(class = addonCl, addon)
+      )
+    } else {
+      shiny::tags$span(
+        class = tagCl,
+        name
+      )
+    }
+  }
+}
