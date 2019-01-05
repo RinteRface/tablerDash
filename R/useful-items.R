@@ -382,3 +382,37 @@ tablerAlert <- function(..., title = NULL, status, icon = NULL, closable = TRUE)
     ...
   )
 }
+
+
+
+
+#' Create a Boostrap 4 status
+#'
+#' Build a tabler status
+#'
+#' @param color Status color. See \url{https://preview.tabler.io/docs/colors.html}.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerStatus(color = "lime")
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerStatus <- function(color) {
+  shiny::tags$span(class = paste0("status-icon bg-", color))
+}
