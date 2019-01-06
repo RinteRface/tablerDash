@@ -11,7 +11,7 @@ tablerProgress(value, status = NULL, size = NULL)
 
 \item{status}{Progress status. See \url{https://preview.tabler.io/docs/colors.html}.}
 
-\item{size}{Progress bar size: NULL, "sm", "md" or "lg".}
+\item{size}{Progress bar size: NULL, "xs", "sm", "md".}
 }
 \description{
 Build a tabler progress bar
@@ -27,8 +27,8 @@ if(interactive()){
     footer = NULL,
     title = "test",
     body = tablerDashBody(
-      tablerProgress(value = 10),
-      tablerProgress(value = 90, status = "red", size = "lg")
+      tablerProgress(value = 10, size = "xs"),
+      tablerProgress(value = 90, status = "red", size = "sm")
      )
    ),
    server = function(input, output) {}

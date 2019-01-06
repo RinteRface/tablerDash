@@ -502,7 +502,7 @@ tablerSocialLink <- function(name = NULL, href = NULL, icon) {
 #'
 #' @param value Progress value.
 #' @param status Progress status. See \url{https://preview.tabler.io/docs/colors.html}.
-#' @param size Progress bar size: NULL, "sm", "md" or "lg".
+#' @param size Progress bar size: NULL, "xs", "sm", "md".
 #'
 #' @examples
 #' if(interactive()){
@@ -515,8 +515,8 @@ tablerSocialLink <- function(name = NULL, href = NULL, icon) {
 #'     footer = NULL,
 #'     title = "test",
 #'     body = tablerDashBody(
-#'       tablerProgress(value = 10),
-#'       tablerProgress(value = 90, status = "red", size = "lg")
+#'       tablerProgress(value = 10, size = "xs"),
+#'       tablerProgress(value = 90, status = "red", size = "sm")
 #'      )
 #'    ),
 #'    server = function(input, output) {}
