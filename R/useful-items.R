@@ -416,3 +416,78 @@ tablerAlert <- function(..., title = NULL, status, icon = NULL, closable = TRUE)
 tablerStatus <- function(color) {
   shiny::tags$span(class = paste0("status-icon bg-", color))
 }
+
+
+
+
+
+#' Create a Boostrap 4 social link list
+#'
+#' Build a tabler social link list
+#'
+#' @param ... Slot for \link{tablerSocialLink}.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerSocialLinks(
+#'        tablerSocialLink(
+#'         name = "facebook",
+#'         href = "https://www.facebook.com",
+#'         icon = "facebook"
+#'        ),
+#'        tablerSocialLink(
+#'         name = "twitter",
+#'         href = "https://www.twitter.com",
+#'         icon = "twitter"
+#'        )
+#'       )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerSocialLinks <- function(...) {
+  shiny::tags$ul(class = "social-links list-inline mb-0 mt-2", ...)
+}
+
+
+
+
+
+#' Create a Boostrap 4 social link
+#'
+#' Build a tabler social link
+#'
+#' @param name Link tooltip name.
+#' @param href External link.
+#' @param icon Icon (font awesome).
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerSocialLink <- function(name = NULL, href = NULL, icon) {
+  shiny::tags$li(
+    class = "list-inline-item",
+    shiny::a(
+      href = href,
+      target = "_blank",
+      title = "",
+      `data-toggle` = "tooltip",
+      `data-original-title` = name,
+      shiny::tags$i(class = paste0("fa fa-", icon))
+    )
+  )
+}

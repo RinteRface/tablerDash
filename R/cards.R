@@ -426,3 +426,81 @@ tablerBlogCard <- function(..., title = NULL, author = NULL, date = NULL, href =
     )
   )
 }
+
+
+
+
+#' Create a Boostrap 4 profile card
+#'
+#' Build a tabler profile card
+#'
+#' @param title Profile title.
+#' @param subtitle Card subtitle.
+#' @param background Card background url or path.
+#' @param src User profile image.
+#' @param socials Slot for \link{tablerSocialLinks} and \link{tablerSocialLink}.
+#' @param width Card width. 4 by default.
+#'
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'      tablerProfileCard(
+#'       title = "Peter Richards",
+#'       subtitle = "Big belly rude boy, million
+#'       dollar hustler. Unemployed.",
+#'       background = "https://preview.tabler.io/demo/photos/ilnur-kalimullin-218996-500.jpg",
+#'       src = "https://preview.tabler.io/demo/faces/male/16.jpg",
+#'       tablerSocialLinks(
+#'        tablerSocialLink(
+#'         name = "facebook",
+#'         href = "https://www.facebook.com",
+#'         icon = "facebook"
+#'        ),
+#'        tablerSocialLink(
+#'         name = "twitter",
+#'         href = "https://www.twitter.com",
+#'         icon = "twitter"
+#'        )
+#'       )
+#'      )
+#'     )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerProfileCard <- function(title = NULL, subtitle = NULL, background = NULL,
+                              src = NULL, socials = NULL, width = 4) {
+
+  shiny::column(
+    width = width,
+    shiny::tags$div(
+      class = "card card-profile",
+      # header
+      shiny::tags$div(
+        class = "card-header",
+        style = paste0("background-image: url(\"", background, "\")")
+      ),
+      # body
+      shiny::tags$div(
+        class = "card-body text-center",
+        shiny::img(src = src, class = "card-profile-img"),
+        shiny::h3(title),
+        shiny::p(class = "mb-4", subtitle),
+        socials
+      )
+    )
+  )
+}
