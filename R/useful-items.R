@@ -491,3 +491,54 @@ tablerSocialLink <- function(name = NULL, href = NULL, icon) {
     )
   )
 }
+
+
+
+
+
+#' Create a Boostrap 4 progress bar
+#'
+#' Build a tabler progress bar
+#'
+#' @param value Progress value.
+#' @param status Progress status. See \url{https://preview.tabler.io/docs/colors.html}.
+#' @param size Progress bar size: NULL, "sm", "md" or "lg".
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'       tablerProgress(value = 10),
+#'       tablerProgress(value = 90, status = "red", size = "lg")
+#'      )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerProgress <- function(value, status = NULL, size = NULL) {
+
+  progressCl <- "progress m-2"
+  if (!is.null(size)) progressCl <- paste0(progressCl, " progress-", size)
+
+  barCl <- "progress-bar"
+  if (!is.null(status)) barCl <- paste0(barCl, " bg-", status)
+
+  shiny::tags$div(
+    class = progressCl,
+    shiny::tags$div(
+      class = barCl,
+      style = paste0("width: ", value, "%")
+    )
+  )
+}
