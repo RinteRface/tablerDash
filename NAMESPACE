@@ -3,6 +3,7 @@
 export(tablerAlert)
 export(tablerAvatar)
 export(tablerAvatarList)
+export(tablerBlogCard)
 export(tablerCard)
 export(tablerDashBody)
 export(tablerDashFooter)
