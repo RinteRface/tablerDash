@@ -6,7 +6,8 @@
 \usage{
 tablerCard(..., title = NULL, options = NULL, footer = NULL,
   status = NULL, statusSide = c("top", "left"), collapsible = TRUE,
-  collapsed = FALSE, closable = TRUE, zoomable = TRUE, width = 6)
+  collapsed = FALSE, closable = TRUE, zoomable = TRUE, width = 6,
+  overflow = FALSE)
 }
 \arguments{
 \item{...}{Body content}
@@ -31,6 +32,9 @@ tablerCard(..., title = NULL, options = NULL, footer = NULL,
 
 \item{width}{Card width. 6 by default. See Bootstrap grid system. If NULL, the card is
 full width.}
+
+\item{overflow}{Whether to set up a x and y overflow. FALSE by default.
+Useful in case the card contains large tables.}
 }
 \description{
 Build a tabler card

@@ -26,7 +26,7 @@ tablerDashFooter <- function(..., copyrights = NULL) {
           class = "col-auto ml-lg-auto",
           shiny::tags$div(
             class = "row align-items-center",
-            ...
+            lapply(list(...), shiny::tagAppendAttributes, class = "mx-2")
           )
         )
       )

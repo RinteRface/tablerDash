@@ -4,7 +4,7 @@
 \alias{tablerDashNav}
 \title{Create a Boostrap 4 dashboard navbar}
 \usage{
-tablerDashNav(id, ..., src = NULL, navMenu)
+tablerDashNav(id, ..., src = NULL, navMenu = NULL)
 }
 \arguments{
 \item{id}{Navbar id.}

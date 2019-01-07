@@ -14,6 +14,8 @@
 #' @param zoomable Whether the card is zoomable. TRUE by default.
 #' @param width Card width. 6 by default. See Bootstrap grid system. If NULL, the card is
 #' full width.
+#' @param overflow Whether to set up a x and y overflow. FALSE by default.
+#' Useful in case the card contains large tables.
 #'
 #' @examples
 #' if(interactive()){
@@ -51,7 +53,7 @@
 tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
                        status = NULL, statusSide = c("top", "left"),
                        collapsible = TRUE, collapsed = FALSE, closable = TRUE,
-                       zoomable = TRUE, width = 6) {
+                       zoomable = TRUE, width = 6, overflow = FALSE) {
 
   statusSide <- match.arg(statusSide)
 
@@ -67,6 +69,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
 
   cardTag <- shiny::tags$div(
     class = cardCl,
+    style =  if (overflow) "max-height: 500px; overflow-y: auto;" else NULL,
     if (!is.null(status)) shiny::tags$div(class = statusCl),
     # header
     if (!is.null(title)) {
@@ -77,7 +80,9 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
         # card toolbox and other elements such as buttons, ...
         shiny::tags$div(
           class = "card-options",
-          if (!is.null(options)) options,
+          if (!is.null(options)) {
+            lapply(options, shiny::tagAppendAttributes, class = "mx-1")
+          },
           if (collapsible) {
             shiny::tags$a(
               href = "#",
@@ -409,13 +414,15 @@ tablerBlogCard <- function(..., title = NULL, author = NULL, date = NULL, href =
           class = "d-flex align-items-center pt-5 mt-auto",
           shiny::tags$div(
             class = "d-flex align-items-center px-2",
-            shiny::tagAppendAttributes(
-              tablerAvatar(
-                url = avatarUrl,
-                size = "md"
-              ),
-              class = "mr-3"
-            ),
+            if (!is.null(avatarUrl)) {
+              shiny::tagAppendAttributes(
+                tablerAvatar(
+                  url = avatarUrl,
+                  size = "md"
+                ),
+                class = "mr-3"
+              )
+            },
             shiny::tags$div(
               shiny::tags$div(author),
               htmltools::tags$small(class = "d-block text-muted", date)

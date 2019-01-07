@@ -10,7 +10,7 @@
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-tablerDashNav <- function(id, ..., src = NULL, navMenu) {
+tablerDashNav <- function(id, ..., src = NULL, navMenu = NULL) {
 
   headerTag <- shiny::tags$div(
     class = "header py-4",
@@ -25,34 +25,42 @@ tablerDashNav <- function(id, ..., src = NULL, navMenu) {
           shiny::img(src = src, class = "header-brand-img")
         ),
         # navbar content
-        shiny::tags$div(class = "d-flex order-lg-2 ml-auto", ...),
+        shiny::tags$div(
+          class = "d-flex order-lg-2 ml-auto",
+          lapply(list(...), shiny::tagAppendAttributes, class = "mx-2")
+        ),
         # header toggle
-        shiny::tags$a(
-          href = "#",
-          class = "header-toggler d-lg-none ml-3 ml-lg-0",
-          `data-toggle` = "collapse",
-          `data-target` = paste0("#", id),
-          shiny::tags$span(class="header-toggler-icon")
-        )
+        if (!is.null(navMenu)) {
+          shiny::tags$a(
+            href = "#",
+            class = "header-toggler d-lg-none ml-3 ml-lg-0",
+            `data-toggle` = "collapse",
+            `data-target` = paste0("#", id),
+            shiny::tags$span(class="header-toggler-icon")
+          )
+        }
       )
     )
   )
 
-  navTag <- shiny::tags$div(
-    class = "header collapse d-lg-flex p-0",
-    id = id,
+  navTag <- if (!is.null(navMenu)) {
     shiny::tags$div(
-      class = "container",
+      class = "header collapse d-lg-flex p-0",
+      id = id,
       shiny::tags$div(
-        class = "row align-items-center",
-        # navigation
+        class = "container",
         shiny::tags$div(
-          class = "col-lg order-lg-first",
-          navMenu
+          class = "row align-items-center",
+          # navigation
+          shiny::tags$div(
+            class = "col-lg order-lg-first",
+            navMenu
+          )
         )
       )
     )
-  )
+  }
+
   shiny::tagList(headerTag, navTag)
 }
 
