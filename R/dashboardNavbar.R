@@ -103,3 +103,79 @@ tablerNavMenuItem <- function(..., tabName = NULL, icon = NULL) {
     )
   )
 }
+
+
+
+
+
+#' Create a Boostrap 4 dashboard dropdown container
+#'
+#' Build a tabler dashboard dropdown container
+#'
+#' @param ... Slot for \link{tablerDropdownItem}.
+#' @param icon Dropdown icon.
+#' @param collapsed Whether to collapse the dropdown. TRUE by default.
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerDropDown <- function(..., icon = "bell", collapsed = TRUE) {
+
+  shiny::tags$div(
+    class = "dropdown d-none d-md-flex",
+    # link and icon
+    shiny::tags$a(
+      class = "nav-link icon",
+      `data-toggle` = "dropdown",
+      `aria-expanded` = if (collapsed) "false" else "true",
+      tablerIcon(name = icon, lib = "feather"),
+      shiny::span(class = "nav-unread")
+    ),
+    # dropdown content
+    shiny::tags$div(
+      class = "dropdown-menu dropdown-menu-right dropdown-menu-arrow",
+      `x-placement` = "bottom-end",
+      style = "position: absolute;
+      transform: translate3d(39px, 32px, 0px);
+      top: 0px; left: 0px; will-change: transform;",
+      ...
+    )
+  )
+}
+
+
+
+
+#' Create a Boostrap 4 dashboard dropdown container
+#'
+#' Build a tabler dashboard dropdown container
+#'
+#' @param ... Item content.
+#' @param title Item title.
+#' @param href External link.
+#' @param url Author image.
+#' @param status Item status. Only if url is not NULL.
+#' @param date Item date.
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerDropdownItem <- function(..., title = NULL, href = NULL,
+                               url = NULL, status = NULL, date = NULL) {
+  shiny::tags$a(
+    href = href,
+    target = "_blank",
+    class = "dropdown-item d-flex",
+    if (!is.null(url)) {
+     shiny::tagAppendAttributes(
+       tablerAvatar(url = url, status = status),
+       class = "mr-3"
+     )
+    },
+    shiny::tags$div(
+      if (!is.null(title)) shiny::strong(paste0(title, ": ")),
+      ...,
+      shiny::tags$div(class = "small text-muted", date)
+    )
+  )
+}

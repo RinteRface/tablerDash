@@ -19,6 +19,26 @@ shiny::shinyApp(
           icon = "box",
           "Test"
         )
+      ),
+      tablerDropDown(
+        tablerDropdownItem(
+          title = "Item 1 title",
+          href = "http://google.com",
+          url = "https://image.flaticon.com/icons/svg/1301/1301804.svg",
+          status = "danger",
+          date = "now",
+          "This is the first dropdown item"
+        ),
+        tablerDropdownItem(
+          url = "https://image.flaticon.com/icons/svg/1301/1301809.svg",
+          status = "warning",
+          "This is the second dropdown item",
+          date = "yesterday"
+        ),
+        tablerDropdownItem(
+          title = "Item 3 title",
+          "This is the third dropdown item"
+        )
       )
     ),
     footer = tablerDashFooter(
