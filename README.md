@@ -1,9 +1,11 @@
 # tablerDash
 
-[![Travis build status](https://travis-ci.org/DivadNojnarg/tablerDash.svg?branch=master)](https://travis-ci.org/DivadNojnarg/tablerDash)
+[![Travis build status](https://travis-ci.org/RinteRface/tablerDash.svg?branch=master)](https://travis-ci.org/RinteRface/tablerDash)
 [![CRAN status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
 
 > tabler dashboard template for shiny
+
+See [https://tabler.io](https://tabler.io) for the original template.
 
 # This is a WIP
 
