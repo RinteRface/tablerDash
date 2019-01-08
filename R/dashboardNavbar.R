@@ -127,7 +127,7 @@ tablerNavMenuItem <- function(..., tabName = NULL, icon = NULL) {
 #' @author David Granjon, \email{dgranjon@@ymail.com}
 #'
 #' @export
-tablerDropDown <- function(..., icon = "bell", collapsed = TRUE) {
+tablerDropdown <- function(..., icon = "bell", collapsed = TRUE) {
 
   shiny::tags$div(
     class = "dropdown d-none d-md-flex",

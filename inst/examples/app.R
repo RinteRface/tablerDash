@@ -81,7 +81,7 @@ shiny::shinyApp(
       #),
       tablerIcon(name = "fr", lib = "flag"),
       tablerIcon(name = "ch", lib = "flag"),
-      tablerDropDown(
+      tablerDropdown(
         tablerDropdownItem(
           title = "Item 1 title",
           href = "http://google.com",
