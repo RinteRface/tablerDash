@@ -10,9 +10,9 @@ Authors@R: c(
 Maintainer: David Granjon  <dgranjon@ymail.com>
 Description: R interface to the tabler Bootstrap 4 HTML template.
     Create fancy dashboards. See more here <https://tabler.io>.
-URL: https://rinterface.github.io/tablerDash/index.html, https://github.com/RinteRface/tablerDash/ 
+URL: https://rinterface.github.io/tablerDash/, https://github.com/RinteRface/tablerDash/ 
 BugReports: https://github.com/RinteRface/tablerDash/issues
-Imports: shiny, htmltools
+Imports: shiny, htmltools, knitr
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
