@@ -1,0 +1,12 @@
+name: tablerdash
+title: tablerDash
+username: divadnojnarg
+account: divadnojnarg
+server: 130.60.24.205
+hostUrl: http://130.60.24.205:3939/__api__
+appId: 2
+bundleId: 15
+url: http://130.60.24.205:3939/content/2/
+when: 1549372842.08066
+asMultiple: FALSE
+asStatic: FALSE
