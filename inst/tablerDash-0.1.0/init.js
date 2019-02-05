@@ -9,9 +9,7 @@ $(function () {
   var workerId = $('base').attr('href');
   // ensure that this code does not locally
   if (typeof workerId != "undefined") {
-    // get the initial page url
-    var url = window.location.href;
-    window.location.replace(url + workerId);
+    window.history.replaceState( {} , workerId, '/' + workerId);
     // do it for all tabs
     //$("#mymenu .nav-item a").each(function(){
     //  $(this).click(function(){
