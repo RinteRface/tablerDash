@@ -7,7 +7,7 @@
 
 See [https://tabler.io](https://tabler.io) for the original template.
 
-# This is a WIP
+# Preview
 
 A current running demo is available [here](http://www.rinterface.com/shiny/tablerDash/)
 

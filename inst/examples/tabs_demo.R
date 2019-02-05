@@ -67,6 +67,18 @@ shiny::shinyApp(
     navbar = tablerDashNav(
       id = "mymenu",
       src = "https://preview.tabler.io/demo/brand/tabler.svg",
+      navMenu = tablerNavMenu(
+        tablerNavMenuItem(
+          tabName = "Home",
+          icon = "home",
+          "Home"
+        ),
+        tablerNavMenuItem(
+          tabName = "Test",
+          icon = "box",
+          "Test"
+        )
+      ),
       tablerIcon(name = "fr", lib = "flag"),
       tablerIcon(name = "ch", lib = "flag"),
       tablerDropdown(
@@ -100,126 +112,133 @@ shiny::shinyApp(
 
       setZoom(class = "card"),
       chooseSliderSkin("Nice"),
-
-      fluidRow(
-        column(
-          width = 3,
-          profileCard,
-          tablerStatCard(
-            value = 43,
-            title = "Followers",
-            trend = -10,
-            width = 12
-          )
-        ),
-        column(
-          width = 6,
-          flowCard
-        ),
-        column(
-          width = 3,
-          tablerCard(
-            width = 12,
-            tablerTimeline(
-              tablerTimelineItem(
-                title = "Item 1",
-                status = "green",
-                date = "now"
-              ),
-              tablerTimelineItem(
-                title = "Item 2",
-                status = NULL,
-                date = "yesterday",
-                "Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit."
-              )
-            )
-          ),
-          tablerInfoCard(
-            value = "132 sales",
-            status = "danger",
-            icon = "dollar-sign",
-            description = "12 waiting payments",
-            width = 12
-          ),
-          numericInput(
-            inputId = "totalStorage",
-            label = "Enter storage capacity",
-            value = 1000),
-          uiOutput("info")
-        )
-      ),
-      fluidRow(
-        column(
-          width = 6,
-          tablerCard(
-            title = "Plots",
-            zoomable = FALSE,
-            closable = FALSE,
-            options = tagList(
-              switchInput(
-                inputId = "enable_distPlot",
-                label = "Plot?",
-                value = TRUE,
-                onStatus = "success",
-                offStatus = "danger"
+      tablerTabItems(
+        tablerTabItem(
+          tabName = "Home",
+          fluidRow(
+            column(
+              width = 3,
+              profileCard,
+              tablerStatCard(
+                value = 43,
+                title = "Followers",
+                trend = -10,
+                width = 12
               )
             ),
-            plotOutput("distPlot"),
-            status = "info",
-            statusSide = "left",
-            width = 12,
-            footer = tagList(
-              column(
+            column(
+              width = 6,
+              flowCard
+            ),
+            column(
+              width = 3,
+              tablerCard(
                 width = 12,
-                align = "center",
-                sliderInput(
-                  "obs",
-                  "Number of observations:",
-                  min = 0,
-                  max = 1000,
-                  value = 500
+                tablerTimeline(
+                  tablerTimelineItem(
+                    title = "Item 1",
+                    status = "green",
+                    date = "now"
+                  ),
+                  tablerTimelineItem(
+                    title = "Item 2",
+                    status = NULL,
+                    date = "yesterday",
+                    "Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit."
+                  )
                 )
-              )
+              ),
+              tablerInfoCard(
+                value = "132 sales",
+                status = "danger",
+                icon = "dollar-sign",
+                description = "12 waiting payments",
+                width = 12
+              ),
+              numericInput(
+                inputId = "totalStorage",
+                label = "Enter storage capacity",
+                value = 1000),
+              uiOutput("info")
             )
           )
         ),
-        column(
-          width = 6,
-          tablerCard(
-            title = "Tables",
-            checkboxGroupInput(
-              "variable",
-              "Variables to show:",
-              c("Cylinders" = "cyl",
-                "Transmission" = "am",
-                "Gears" = "gear"
-              ),
-              inline = TRUE
-            ),
-            tableOutput("data"),
-            width = 12,
-            overflow = TRUE
-          ),
+        tablerTabItem(
+          tabName = "Test",
           fluidRow(
             column(
               width = 6,
-              echarts4rOutput("gauge", height = "300px")
+              tablerCard(
+                title = "Plots",
+                zoomable = FALSE,
+                closable = FALSE,
+                options = tagList(
+                  switchInput(
+                    inputId = "enable_distPlot",
+                    label = "Plot?",
+                    value = TRUE,
+                    onStatus = "success",
+                    offStatus = "danger"
+                  )
+                ),
+                plotOutput("distPlot"),
+                status = "info",
+                statusSide = "left",
+                width = 12,
+                footer = tagList(
+                  column(
+                    width = 12,
+                    align = "center",
+                    sliderInput(
+                      "obs",
+                      "Number of observations:",
+                      min = 0,
+                      max = 1000,
+                      value = 500
+                    )
+                  )
+                )
+              )
             ),
             column(
               width = 6,
-              sliderInput(
-                "gaugeVal",
-                "Gauge Value:",
-                min = 0,
-                max = 100,
-                value = 50
+              tablerCard(
+                title = "Tables",
+                checkboxGroupInput(
+                  "variable",
+                  "Variables to show:",
+                  c("Cylinders" = "cyl",
+                    "Transmission" = "am",
+                    "Gears" = "gear"
+                  ),
+                  inline = TRUE
+                ),
+                tableOutput("data"),
+                width = 12,
+                overflow = TRUE
+              ),
+              fluidRow(
+                column(
+                  width = 6,
+                  echarts4rOutput("gauge", height = "300px")
+                ),
+                column(
+                  width = 6,
+                  sliderInput(
+                    "gaugeVal",
+                    "Gauge Value:",
+                    min = 0,
+                    max = 100,
+                    value = 50
+                  )
+                )
               )
             )
-          )
+          ),
+          fluidRow(calendarCard)
         )
-      ),
-      fluidRow(calendarCard)
+      )
     )
   ),
   server = function(input, output) {
