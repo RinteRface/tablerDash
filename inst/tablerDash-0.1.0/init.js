@@ -14,7 +14,7 @@ $(function () {
     // list all tabs
     $("#mymenu .nav-item a").each(function(){
       // get the tablink href value
-      var tablink = "/" + $(this).attr("href");
+      var tablink = $(this).attr("href");
       // set the new url taking worker id as reference
       $(this).attr("href", url + workerId + tablink);
       console.log($(this));
