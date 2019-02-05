@@ -11,17 +11,18 @@ $(function () {
   if (typeof workerId != "undefined") {
     // get the initial page url
     var url = window.location.href;
-    // list all tabs
-    $("#mymenu .nav-item a").each(function(){
-      $(this).click(function(){
-        // get the tablink href value
-        var tablink = $(this).attr("href");
-        // set the new url taking worker id as reference
-        $(this).attr("href", url + workerId + tablink);
-        console.log($(this));
-        alert("Click on a tab!");
-      });
-    });
+    window.location.replace(url + workerId);
+    // do it for all tabs
+    //$("#mymenu .nav-item a").each(function(){
+    //  $(this).click(function(){
+    //    // get the tablink href value
+    //    var tablink = $(this).attr("href");
+    //    // set the new url taking worker id as reference
+    //    $(this).attr("href", url + workerId + tablink);
+    //    console.log($(this));
+    //    alert("Click on a tab!");
+    //  });
+    //});
   }
 
   // handle when the user click on other items
