@@ -10,7 +10,7 @@ $(function () {
   // ensure that this code does not locally
   if (typeof workerId != "undefined") {
     var pathname = window.location.pathname;
-    var newpath = pathname + '/' + workerId;
+    var newpath = pathname + workerId;
     console.log(newpath);
     window.history.replaceState( {} , 'newpath', newpath);
     // do it for all tabs
