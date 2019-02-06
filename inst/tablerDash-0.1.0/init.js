@@ -7,6 +7,27 @@ $(function () {
   $('#mymenu .nav-item:eq(0) a').tab('show');
   $('.container-fluid.tab-pane:eq(0)').addClass('active show');
 
+  // handles shinyapps.io
+  var workerId = $('base').attr('href');
+  // ensure that this code does not locally
+  if (typeof workerId != "undefined") {
+    var pathname = window.location.pathname;
+    var newpath = pathname + workerId;
+    console.log(newpath);
+    window.history.replaceState( {} , 'newpath', newpath);
+    // do it for all tabs
+    //$("#mymenu .nav-item a").each(function(){
+    //  $(this).click(function(){
+    //    // get the tablink href value
+    //    var tablink = $(this).attr("href");
+    //    // set the new url taking worker id as reference
+    //    $(this).attr("href", url + workerId + tablink);
+    //    console.log($(this));
+    //    alert("Click on a tab!");
+    //  });
+    //});
+  }
+
   // handle when the user click on other items
   //$('.nav-item').on('click', function (event) {
   //  // activate the seletec tab item
