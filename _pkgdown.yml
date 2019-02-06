@@ -47,6 +47,11 @@ reference:
   - '`tablerTimeline`'
   - '`tablerTimelineItem`'
 
+- title: Gallery
+  desc: tablerDash showcase
+  contents:
+  - '`tablerDashGallery`'
+
 template:
   params:
     bootswatch: journal

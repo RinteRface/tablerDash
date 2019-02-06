@@ -13,6 +13,7 @@ Description: R interface to the tabler Bootstrap 4 HTML template.
 URL: https://rinterface.github.io/tablerDash/, https://github.com/RinteRface/tablerDash/ 
 BugReports: https://github.com/RinteRface/tablerDash/issues
 Imports: shiny, htmltools, knitr
+Suggests: shinyWidgets, shinyEffects, echarts4r
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
