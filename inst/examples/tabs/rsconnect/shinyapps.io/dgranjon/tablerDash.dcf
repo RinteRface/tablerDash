@@ -5,8 +5,8 @@ account: dgranjon
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 690886
-bundleId: 1857535
+bundleId: 1857588
 url: https://dgranjon.shinyapps.io/tablerDash/
-when: 1549381181.26909
+when: 1549382840.34033
 asMultiple: FALSE
 asStatic: FALSE

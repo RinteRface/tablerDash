@@ -9,7 +9,10 @@ $(function () {
   var workerId = $('base').attr('href');
   // ensure that this code does not locally
   if (typeof workerId != "undefined") {
-    window.history.replaceState( {} , workerId, '/' + workerId);
+    var pathname = window.location.pathname;
+    var newpath = pathname + '/' + workerId;
+    console.log(newpath);
+    window.history.replaceState( {} , 'newpath', newpath);
     // do it for all tabs
     //$("#mymenu .nav-item a").each(function(){
     //  $(this).click(function(){
