@@ -4,8 +4,6 @@ library(shinyEffects)
 library(echarts4r)
 library(shinyWidgets)
 
-options(shiny.trace = TRUE)
-
 # datas flowGl
 vectors <- expand.grid(x = -3:3, y = -3:3)
 mu <- 1
@@ -67,8 +65,6 @@ shiny::shinyApp(
     navbar = tablerDashNav(
       id = "mymenu",
       src = "https://preview.tabler.io/demo/brand/tabler.svg",
-      tablerIcon(name = "fr", lib = "flag"),
-      tablerIcon(name = "ch", lib = "flag"),
       tablerDropdown(
         tablerDropdownItem(
           title = "Item 1 title",

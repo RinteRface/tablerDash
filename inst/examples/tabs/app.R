@@ -4,7 +4,6 @@ library(shinyEffects)
 library(echarts4r)
 library(shinyWidgets)
 
-options(shiny.trace = TRUE)
 
 # datas flowGl
 vectors <- expand.grid(x = -3:3, y = -3:3)
@@ -79,8 +78,6 @@ shiny::shinyApp(
           "Test"
         )
       ),
-      tablerIcon(name = "fr", lib = "flag"),
-      tablerIcon(name = "ch", lib = "flag"),
       tablerDropdown(
         tablerDropdownItem(
           title = "Item 1 title",

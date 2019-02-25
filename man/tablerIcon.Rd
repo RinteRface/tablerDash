@@ -4,12 +4,12 @@
 \alias{tablerIcon}
 \title{Create a Boostrap 4 icon}
 \usage{
-tablerIcon(name, lib = c("feather", "font-awesome", "flag", "payment"))
+tablerIcon(name, lib = c("feather", "font-awesome", "payment"))
 }
 \arguments{
 \item{name}{Name of icon. See \url{https://preview.tabler.io/icons.html} for all valid icons.}
 
-\item{lib}{Icon library ("feather", "font-awesome", "flag", "payment").}
+\item{lib}{Icon library ("feather", "font-awesome", "payment").}
 }
 \description{
 Build a tabler icon
