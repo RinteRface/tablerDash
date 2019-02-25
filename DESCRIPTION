@@ -8,7 +8,7 @@ Authors@R: c(
   person(family = "codecalm", role = c("ctb", "cph"), comment = "tabler template for Bootstrap 4"),
   person("Winston", "Chang", role = c("ctb", "cph"), comment = "Utils functions from shinydashboard")) 
 Maintainer: David Granjon  <dgranjon@ymail.com>
-Description: R interface to the tabler Bootstrap 4 HTML template.
+Description: R interface to the Tabler Bootstrap 4 HTML template.
     Create fancy dashboards. See more here <https://tabler.io>.
 URL: https://rinterface.github.io/tablerDash/, https://github.com/RinteRface/tablerDash/ 
 BugReports: https://github.com/RinteRface/tablerDash/issues
