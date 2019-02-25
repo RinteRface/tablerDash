@@ -8,3 +8,8 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+Possibly mis-spelled words in DESCRIPTION:
+  Tabler (3:8, 11:33)
+  
+This is a FALSE positive, there is no mis-spelled word
