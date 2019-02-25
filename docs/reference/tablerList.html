@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a Boostrap 4 info card — tablerInfoCard • tablerDash</title>
+<title>Create a Boostrap 4 list container — tablerList • tablerDash</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Create a Boostrap 4 info card — tablerInfoCard" />
+<meta property="og:title" content="Create a Boostrap 4 list container — tablerList" />
 
-<meta property="og:description" content="Build a tabler info card" />
+<meta property="og:description" content="Build a tabler list container" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,46 +117,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a Boostrap 4 info card</h1>
-    <small class="dont-index">Source: <a href='https://github.com/RinteRface/tablerDash/blob/master/R/cards.R'><code>R/cards.R</code></a></small>
-    <div class="hidden name"><code>tablerInfoCard.Rd</code></div>
+    <h1>Create a Boostrap 4 list container</h1>
+    <small class="dont-index">Source: <a href='https://github.com/RinteRface/tablerDash/blob/master/R/useful-items.R'><code>R/useful-items.R</code></a></small>
+    <div class="hidden name"><code>tablerList.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Build a tabler info card</p>
+    <p>Build a tabler list container</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>tablerInfoCard</span>(<span class='no'>value</span>, <span class='kw'>description</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>status</span>, <span class='no'>icon</span>, <span class='kw'>href</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
+    <pre class="usage"><span class='fu'>tablerList</span>(<span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>value</th>
-      <td><p>Card value.</p></td>
-    </tr>
-    <tr>
-      <th>description</th>
-      <td><p>Percentage increase/decrease.</p></td>
-    </tr>
-    <tr>
-      <th>status</th>
-      <td><p>Card status. See <a href='https://preview.tabler.io/docs/colors.html'>https://preview.tabler.io/docs/colors.html</a>.</p></td>
-    </tr>
-    <tr>
-      <th>icon</th>
-      <td><p>Card icon.</p></td>
-    </tr>
-    <tr>
-      <th>href</th>
-      <td><p>External link.</p></td>
-    </tr>
-    <tr>
-      <th>width</th>
-      <td><p>Card width. 4 by default.</p></td>
+      <th>...</th>
+      <td><p>Slot for <a href='tablerListItem.html'>tablerListItem</a>.</p></td>
     </tr>
     </table>
     
@@ -172,13 +151,36 @@
     <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
     <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"test"</span>,
     <span class='kw'>body</span> <span class='kw'>=</span> <span class='fu'><a href='tablerDashBody.html'>tablerDashBody</a></span>(
-     <span class='fu'>tablerInfoCard</span>(
-      <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"132 sales"</span>,
-      <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"danger"</span>,
-      <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"dollar-sign"</span>,
-      <span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"12 waiting payments"</span>
+      <span class='fu'><a href='tablerCard.html'>tablerCard</a></span>(
+       <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"tablerList"</span>,
+       <span class='fu'>tablerList</span>(
+       <span class='fu'><a href='tablerListItem.html'>tablerListItem</a></span>(
+        <span class='fu'><a href='tablerTag.html'>tablerTag</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Tag"</span>),
+        <span class='fu'><a href='tablerTag.html'>tablerTag</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Tag"</span>, <span class='kw'>href</span> <span class='kw'>=</span> <span class='st'>"https://www.google.com"</span>),
+        <span class='fu'><a href='tablerTag.html'>tablerTag</a></span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Tag"</span>, <span class='kw'>rounded</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"pink"</span>)
+       ),
+       <span class='fu'><a href='tablerListItem.html'>tablerListItem</a></span>(<span class='fu'><a href='tablerStatus.html'>tablerStatus</a></span>(<span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"red"</span>)),
+       <span class='fu'><a href='tablerListItem.html'>tablerListItem</a></span>(
+        <span class='fu'><a href='tablerAvatarList.html'>tablerAvatarList</a></span>(
+         <span class='kw'>stacked</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+         <span class='fu'><a href='tablerAvatar.html'>tablerAvatar</a></span>(
+           <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"DG"</span>,
+           <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"xxl"</span>
+         ),
+         <span class='fu'><a href='tablerAvatar.html'>tablerAvatar</a></span>(
+           <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"DG"</span>,
+           <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"orange"</span>
+         ),
+         <span class='fu'><a href='tablerAvatar.html'>tablerAvatar</a></span>(
+           <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"DG"</span>,
+           <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"warning"</span>
+         ),
+         <span class='fu'><a href='tablerAvatar.html'>tablerAvatar</a></span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='st'>"https://image.flaticon.com/icons/svg/145/145852.svg"</span>)
+         )
+        )
+       )
+      )
      )
-    )
    ),
    <span class='kw'>server</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>) {}
  )

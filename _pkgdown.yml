@@ -38,10 +38,14 @@ reference:
   - '`tablerAvatar`'
   - '`tablerAvatarList`'
   - '`tablerIcon`'
+  - '`tablerList`'
+  - '`tablerListItem`'
   - '`tablerProgress`'
   - '`tablerSocialLink`'
   - '`tablerSocialLinks`'
   - '`tablerStatus`'
+  - '`tablerTable`'
+  - '`tablerTableItem`'
   - '`tablerTag`'
   - '`tablerTagList`'
   - '`tablerTimeline`'
@@ -82,4 +86,5 @@ navbar:
 
 news:
  releases:
+ - text: "tablerDash 0.2.0.9000"
  - text: "tablerDash 0.1.0"

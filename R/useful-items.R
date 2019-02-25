@@ -542,3 +542,179 @@ tablerProgress <- function(value, status = NULL, size = NULL) {
     )
   )
 }
+
+
+
+
+#' Create a Boostrap 4 list container
+#'
+#' Build a tabler list container
+#'
+#' @param ... Slot for \link{tablerListItem}.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'       tablerCard(
+#'        title = "tablerList",
+#'        tablerList(
+#'        tablerListItem(
+#'         tablerTag(name = "Tag"),
+#'         tablerTag(name = "Tag", href = "https://www.google.com"),
+#'         tablerTag(name = "Tag", rounded = TRUE, color = "pink")
+#'        ),
+#'        tablerListItem(tablerStatus(color = "red")),
+#'        tablerListItem(
+#'         tablerAvatarList(
+#'          stacked = TRUE,
+#'          tablerAvatar(
+#'            name = "DG",
+#'            size = "xxl"
+#'          ),
+#'          tablerAvatar(
+#'            name = "DG",
+#'            color = "orange"
+#'          ),
+#'          tablerAvatar(
+#'            name = "DG",
+#'            status = "warning"
+#'          ),
+#'          tablerAvatar(url = "https://image.flaticon.com/icons/svg/145/145852.svg")
+#'          )
+#'         )
+#'        )
+#'       )
+#'      )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerList <- function(...) {
+  shiny::tags$ul(class = "list-unstyled list-separated", ...)
+}
+
+
+
+#' Create a Boostrap 4 list item
+#'
+#' Build a tabler list item
+#'
+#' @param ... Slot for any HTML element.
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerListItem <- function(...) {
+  shiny::tags$li(
+    class = "list-separated-item",
+    shiny::div(class = "row align-items-center", ...)
+  )
+}
+
+
+
+#' Create a Boostrap 4 table container
+#'
+#' Build a tabler table container
+#'
+#' @param ... Slot for \link{tablerTableItem}.
+#' @param title Card wrapper title.
+#' @param width Card wrapper width.
+#'
+#' @examples
+#' if(interactive()){
+#'  library(shiny)
+#'  library(tablerDash)
+#'
+#'  shiny::shinyApp(
+#'    ui = tablerDashPage(
+#'     navbar = NULL,
+#'     footer = NULL,
+#'     title = "test",
+#'     body = tablerDashBody(
+#'        tablerTable(
+#'         title = "tablerTable",
+#'         tablerTableItem(
+#'          left = tablerTag(name = "Tag"),
+#'          right = tablerTag(name = "Tag", href = "https://www.google.com")
+#'         ),
+#'         tablerTableItem(right = tablerStatus(color = "red")),
+#'         tablerTableItem(
+#'          left = tablerAvatarList(
+#'           stacked = TRUE,
+#'           tablerAvatar(
+#'            name = "DG",
+#'            size = "xxl"
+#'           ),
+#'           tablerAvatar(
+#'            name = "DG",
+#'            color = "orange"
+#'           ),
+#'           tablerAvatar(
+#'            name = "DG",
+#'            status = "warning"
+#'           ),
+#'           tablerAvatar(url = "https://image.flaticon.com/icons/svg/145/145852.svg")
+#'           )
+#'          )
+#'        )
+#'      )
+#'    ),
+#'    server = function(input, output) {}
+#'  )
+#' }
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerTable <- function(..., title = NULL, width = 4) {
+
+  wrapper <- tablerCard(
+    title = title,
+    width = width,
+    closable = FALSE,
+    collapsible = FALSE,
+    zoomable = FALSE
+  )
+
+  wrapper$children[[1]]$children[[2]]$children[[2]] <- NULL
+  wrapper$children[[1]]$children[[3]] <- NULL
+
+  tableTag <- shiny::tags$table(
+    class="table card-table",
+    shiny::tags$tbody(...)
+  )
+
+  shiny::tagAppendChild(wrapper$children[[1]], tableTag)
+
+}
+
+
+#' Create a Boostrap 4 table item
+#'
+#' Build a tabler table item
+#'
+#' @param left Left elements.
+#' @param right Right elements.
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @export
+tablerTableItem <- function(left = NULL, right = NULL) {
+  shiny::tags$tr(
+    shiny::tags$td(left),
+    shiny::tags$td(class = "text-right", right)
+  )
+}
