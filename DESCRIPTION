@@ -1,6 +1,6 @@
 Package: tablerDash
 Type: Package
-Title: tabler API for shiny
+Title: Tabler API for Shiny
 Version: 0.1.0
 Authors@R: c(
   person("David", "Granjon", email = "dgranjon@ymail.com", role = c("aut", "cre")),
