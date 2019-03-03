@@ -6,6 +6,8 @@
 #' @param body Slot for \link{tablerDashBody}.
 #' @param footer Slot for \link{tablerDashFooter}.
 #' @param title App title.
+#' @param enable_preloader Whether to enable a page loader. FALSE by default.
+#' @param loading_duration Loader duration in seconds. 2s by default.
 #'
 #' @examples
 #' if(interactive()){
@@ -27,7 +29,36 @@
 #'
 #' @export
 tablerDashPage <- function(navbar = NULL, body = NULL,
-                        footer = NULL, title = NULL){
+                        footer = NULL, title = NULL,
+                        enable_preloader = FALSE,
+                        loading_duration = 2){
+
+
+  # hide body and footer
+  bodyContent <- shiny::tags$div(
+    class = "page-main",
+    style = if (enable_preloader) "visibility: hidden;" else NULL,
+    navbar,
+    body
+  )
+
+  footer <- shiny::tagAppendAttributes(footer, class = "footer")
+
+  footer <- if (enable_preloader) {
+    shiny::tagAppendAttributes(footer, style = "visibility: hidden;")
+  }
+
+  # preloader
+  preloader <- shiny::tags$div(
+    class = "dimmer active",
+    shiny::tags$div(
+      class = "loader",
+      style = "position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px;",
+      shiny::tags$div(
+        class = "dimmer-content"
+      )
+    )
+  )
 
   shiny::tags$html(
     # Head
@@ -60,13 +91,27 @@ tablerDashPage <- function(navbar = NULL, body = NULL,
     addDeps(
       shiny::tags$body(
         class = NA,
+        # set up a time-out for the preloader
+        # The body content disappears first,
+        # then 2s after, the preloader disappears and
+        # the body content is shown
+        onload = if (enable_preloader) {
+          duration <- loading_duration * 1000
+          paste0(
+            "$(document).ready(function() {
+              setTimeout(function(){
+                $('.dimmer.active').remove();
+                $('.page-main').css('visibility', 'visible');
+                $('.footer').css('visibility', 'visible');
+                }, ", duration, ");
+            });
+            "
+          )
+        },
         shiny::tags$div(
           class = "page",
-          shiny::tags$div(
-            class = "page-main",
-            navbar,
-            body
-          ),
+          if (enable_preloader) preloader,
+          bodyContent,
           footer
         )
       )

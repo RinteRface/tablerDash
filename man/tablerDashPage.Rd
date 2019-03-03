@@ -5,7 +5,7 @@
 \title{Create a Boostrap 4 dashboard page}
 \usage{
 tablerDashPage(navbar = NULL, body = NULL, footer = NULL,
-  title = NULL)
+  title = NULL, enable_preloader = FALSE, loading_duration = 2)
 }
 \arguments{
 \item{navbar}{Slot for \link{tablerDashNav}.}
@@ -15,6 +15,10 @@ tablerDashPage(navbar = NULL, body = NULL, footer = NULL,
 \item{footer}{Slot for \link{tablerDashFooter}.}
 
 \item{title}{App title.}
+
+\item{enable_preloader}{Whether to enable a page loader. FALSE by default.}
+
+\item{loading_duration}{Loader duration in seconds. 2s by default.}
 }
 \description{
 Build a tabler dashboard page
