@@ -1,15 +1,18 @@
 Package: tablerDash
 Type: Package
-Title: Tabler API for Shiny
-Version: 0.2.0.9000
+Title: 'Tabler' API for 'Shiny'
+Version: 0.1.0
 Authors@R: c(
   person("David", "Granjon", email = "dgranjon@ymail.com", role = c("aut", "cre")),
   person(family = "RinteRface", role = "cph"),
   person(family = "codecalm", role = c("ctb", "cph"), comment = "tabler template for Bootstrap 4"),
   person("Winston", "Chang", role = c("ctb", "cph"), comment = "Utils functions from shinydashboard")) 
 Maintainer: David Granjon  <dgranjon@ymail.com>
-Description: R interface to the Tabler Bootstrap 4 HTML template.
-    Create fancy dashboards. See more here <https://tabler.io>.
+Description: 'R' interface to the 'Tabler' HTML template. See more here <https://tabler.io>. 
+    'tablerDash' is a light 'Bootstrap 4' dashboard template. There are different 
+     layouts available such as a one page dashboard or a multi page template,
+     where the navigation menu is contained in the navigation bar. A fancy example
+     is available at <https://dgranjon.shinyapps.io/shinyMons/>.
 URL: https://rinterface.github.io/tablerDash/, https://github.com/RinteRface/tablerDash/ 
 BugReports: https://github.com/RinteRface/tablerDash/issues
 Imports: shiny, htmltools, knitr

@@ -53,7 +53,17 @@ tablerDashPage <- function(navbar = NULL, body = NULL,
     class = "dimmer active",
     shiny::tags$div(
       class = "loader",
-      style = "position: fixed; top: 50%; left: 50%; margin-top: -50px; margin-left: -100px;",
+      style = "
+        position: fixed;
+        z-index: 999;
+        height: 2em;
+        width: 2em;
+        overflow: visible;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;",
       shiny::tags$div(
         class = "dimmer-content"
       )

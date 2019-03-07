@@ -13,3 +13,7 @@ Possibly mis-spelled words in DESCRIPTION:
   Tabler (3:8, 11:33)
   
 This is a FALSE positive, there is no mis-spelled word
+
+## Re submission
+- I wrote package names, software names and API names in single quotes (e.g. 'Tabler') in Title and Description. 
+- I enlarged the description
