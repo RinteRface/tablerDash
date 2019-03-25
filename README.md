@@ -9,17 +9,20 @@ See [https://tabler.io](https://tabler.io) for the original template.
 
 ## Installation
 
-This package is not on CRAN:
+This package is on CRAN:
 
 ```r
 # latest devel version
 devtools::install_github("RinteRface/tablerDash")
+# CRAN version
+install.packages("tablerDash")
 ```
 
 ## Demo
 
 ### shiny server
-A current demo running on shiny server open source is available [here](http://www.rinterface.com/shiny/tablerDash/)
+A current demo running on shiny server open source is available [here](http://www.rinterface.com/shiny/tablerDash/).
+(It uses echarts4r webGL components and might not render on several mobile devices.)
 
 <br>
 
@@ -32,9 +35,9 @@ A current demo running on shiny server open source is available [here](http://ww
 <br>
 
 ### shinyapps.io, shiny-server pro and RStudio Connect
-tablerDash works on all the professional RStudio products:
+tablerDash works on all the RStudio products:
 - [on shinyapps.io](https://dgranjon.shinyapps.io/tablerDashDemo/)
-- [on RStudio Connect](http://130.60.24.205:3939/tablerDashDemo/)
+- on RStudio Connect as well
 
 ### Other Examples
 
