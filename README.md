@@ -1,4 +1,4 @@
-# tablerDash
+# tablerDash <img src="https://rinterface.com/inst/images/tablerDash.svg" width=200 align="right" />
 
 [![Travis build status](https://travis-ci.org/RinteRface/tablerDash.svg?branch=master)](https://travis-ci.org/RinteRface/tablerDash)
 [![CRAN status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
