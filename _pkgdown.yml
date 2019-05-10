@@ -86,4 +86,5 @@ navbar:
 
 news:
  releases:
+ - text: "tablerDash 0.1.5"
  - text: "tablerDash 0.1.0"

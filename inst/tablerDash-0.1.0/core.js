@@ -52,7 +52,8 @@ $(document).ready(function() {
     let $card = $(this).closest(DIV_CARD);
 
     $card.toggleClass('card-fullscreen').removeClass('card-collapsed');
-
+    // line added to tell shiny to resize the body content
+    $card.trigger("shown");
     e.preventDefault();
     return false;
   });
