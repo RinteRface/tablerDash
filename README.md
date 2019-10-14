@@ -2,6 +2,8 @@
 
 [![Travis build status](https://travis-ci.org/RinteRface/tablerDash.svg?branch=master)](https://travis-ci.org/RinteRface/tablerDash)
 [![CRAN status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
+[![cranlogs](https://cranlogs.r-pkg.org/badges/tablerDash)](https://cran.r-project.org/package=tablerDash)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://www.rpackages.io/package/tablerDash)
 
 > Tabler dashboard template for shiny with Bootstrap 4
 
