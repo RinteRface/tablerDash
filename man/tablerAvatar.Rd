@@ -4,8 +4,7 @@
 \alias{tablerAvatar}
 \title{Create a Boostrap 4 avatar}
 \usage{
-tablerAvatar(name = NULL, url = NULL, size = NULL, status = NULL,
-  color = NULL)
+tablerAvatar(name = NULL, url = NULL, size = NULL, status = NULL, color = NULL)
 }
 \arguments{
 \item{name}{Avatar placeholder. If not NULL, url cannot be used.}

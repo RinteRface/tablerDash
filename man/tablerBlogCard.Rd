@@ -4,9 +4,17 @@
 \alias{tablerBlogCard}
 \title{Create a Boostrap 4 blog card}
 \usage{
-tablerBlogCard(..., title = NULL, author = NULL, date = NULL,
-  href = NULL, src = NULL, avatarUrl = NULL, width = 4,
-  horizontal = FALSE)
+tablerBlogCard(
+  ...,
+  title = NULL,
+  author = NULL,
+  date = NULL,
+  href = NULL,
+  src = NULL,
+  avatarUrl = NULL,
+  width = 4,
+  horizontal = FALSE
+)
 }
 \arguments{
 \item{...}{Any other elements.}

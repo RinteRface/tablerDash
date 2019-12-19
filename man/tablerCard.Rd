@@ -4,10 +4,21 @@
 \alias{tablerCard}
 \title{Create a Boostrap 4 card}
 \usage{
-tablerCard(..., title = NULL, options = NULL, footer = NULL,
-  status = NULL, statusSide = c("top", "left"), collapsible = TRUE,
-  collapsed = FALSE, closable = TRUE, zoomable = TRUE, width = 6,
-  overflow = FALSE)
+tablerCard(
+  ...,
+  title = NULL,
+  options = NULL,
+  footer = NULL,
+  status = NULL,
+  statusSide = c("top", "left"),
+  collapsible = TRUE,
+  collapsed = FALSE,
+  closable = TRUE,
+  zoomable = TRUE,
+  width = 6,
+  overflow = FALSE,
+  stackable = FALSE
+)
 }
 \arguments{
 \item{...}{Body content}
@@ -35,6 +46,8 @@ full width.}
 
 \item{overflow}{Whether to set up a x and y overflow. FALSE by default.
 Useful in case the card contains large tables.}
+
+\item{stackable}{Whether to apply a stack effect. Default to FALSE.}
 }
 \description{
 Build a tabler card
@@ -52,6 +65,7 @@ if(interactive()){
     body = tablerDashBody(
      tablerCard(
       title = "Card",
+      stackable = TRUE,
       sliderInput("obs", "Number of observations:",
       min = 0, max = 1000, value = 500
       ),

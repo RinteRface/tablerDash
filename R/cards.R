@@ -16,6 +16,7 @@
 #' full width.
 #' @param overflow Whether to set up a x and y overflow. FALSE by default.
 #' Useful in case the card contains large tables.
+#' @param stackable Whether to apply a stack effect. Default to FALSE.
 #'
 #' @examples
 #' if(interactive()){
@@ -30,6 +31,7 @@
 #'     body = tablerDashBody(
 #'      tablerCard(
 #'       title = "Card",
+#'       stackable = TRUE,
 #'       sliderInput("obs", "Number of observations:",
 #'       min = 0, max = 1000, value = 500
 #'       ),
@@ -53,7 +55,8 @@
 tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
                        status = NULL, statusSide = c("top", "left"),
                        collapsible = TRUE, collapsed = FALSE, closable = TRUE,
-                       zoomable = TRUE, width = 6, overflow = FALSE) {
+                       zoomable = TRUE, width = 6, overflow = FALSE,
+                       stackable = FALSE) {
 
   statusSide <- match.arg(statusSide)
 
@@ -66,6 +69,7 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
 
   cardCl <- "card"
   if (collapsed) cardCl <- paste0(cardCl, " card-collapsed")
+  if (stackable) cardCl <- paste0(cardCl, " card-stacked")
 
   cardTag <- shiny::tags$div(
     class = cardCl,
@@ -113,7 +117,11 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
       )
     },
     # body
-    shiny::tags$div(class = "card-body", ...),
+    shiny::tags$div(
+      class = "card-body",
+      style = "overflow-x: auto; overflow-y: auto;",
+      ...
+    ),
     # footer
     if (!is.null(footer)) shiny::tags$div(class = "card-footer", footer)
   )
