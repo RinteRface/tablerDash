@@ -1,7 +1,8 @@
 # tablerDash <img src="https://rinterface.com/inst/images/tablerDash.svg" width=200 align="right" />
 
-[![Travis build status](https://travis-ci.org/RinteRface/tablerDash.svg?branch=master)](https://travis-ci.org/RinteRface/tablerDash)
+[![R build status](https://github.com/RinteRface/tablerDash/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/tablerDash/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/tablerDash)](https://cran.r-project.org/package=tablerDash)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://www.rpackages.io/package/tablerDash)
 
@@ -23,14 +24,14 @@ install.packages("tablerDash")
 ## Demo
 
 ### shiny server
-A current demo running on shiny server open source is available [here](http://www.rinterface.com/shiny/tablerDash/).
+A current demo running on shiny server open source is available [here](https://rinterface.com/shiny/tablerDash/).
 (It uses echarts4r webGL components and might not render on several mobile devices.)
 
 <br>
 
 <div class="row">
 <div class="card">
-<a href="http://www.rinterface.com/shiny/tablerDash/" target="_blank"><img src="man/figures/tablerDash_demo.png"></a>
+<a href="https://rinterface.com/shiny/tablerDash/" target="_blank"><img src="man/figures/tablerDash_demo.png"></a>
 </div>
 </div>
 
@@ -63,3 +64,7 @@ tablerDash works on all the RStudio products:
 ## Issues
 
 Issues are listed [here](https://github.com/RinteRface/tablerDash/issues). 
+
+## Code of Conduct
+  
+  Please note that the tablerDash project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

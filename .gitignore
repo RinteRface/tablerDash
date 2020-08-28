@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+inst/examples/**/rsconnect
+**/.DS_Store
+docs
