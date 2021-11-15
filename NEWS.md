@@ -1,4 +1,4 @@
-# tablerDash 0.1.5
+# tablerDash 0.1.5.9000
 
 ## Bug Fix
 - Resizing a `tablerCard()` triggers the shown javascript event, telling shiny to 

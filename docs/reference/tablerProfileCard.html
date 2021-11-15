@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">tablerDash</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
       </span>
     </div>
 
@@ -122,8 +122,8 @@
     <p>Build a tabler profile card</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tablerProfileCard</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>subtitle</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>background</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>src</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>socials</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
+    <pre class="usage"><span class='fu'>tablerProfileCard</span><span class='op'>(</span>title <span class='op'>=</span> <span class='cn'>NULL</span>, subtitle <span class='op'>=</span> <span class='cn'>NULL</span>, background <span class='op'>=</span> <span class='cn'>NULL</span>,
+  src <span class='op'>=</span> <span class='cn'>NULL</span>, socials <span class='op'>=</span> <span class='cn'>NULL</span>, width <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -154,42 +154,47 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>shiny</span>)
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tablerDash</span>)
-
- <span class='kw pkg'>shiny</span><span class='kw ns'>::</span><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span>(
-   <span class='kw'>ui</span> <span class='kw'>=</span> <span class='fu'><a href='tablerDashPage.html'>tablerDashPage</a></span>(
-    <span class='kw'>navbar</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-    <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-    <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"test"</span>,
-    <span class='kw'>body</span> <span class='kw'>=</span> <span class='fu'><a href='tablerDashBody.html'>tablerDashBody</a></span>(
-     <span class='fu'>tablerProfileCard</span>(
-      <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Peter Richards"</span>,
-      <span class='kw'>subtitle</span> <span class='kw'>=</span> <span class='st'>"Big belly rude boy, million
-      dollar hustler. Unemployed."</span>,
-      <span class='kw'>background</span> <span class='kw'>=</span> <span class='st'>"https://preview.tabler.io/demo/photos/ilnur-kalimullin-218996-500.jpg"</span>,
-      <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://preview.tabler.io/demo/faces/male/16.jpg"</span>,
-      <span class='fu'><a href='tablerSocialLinks.html'>tablerSocialLinks</a></span>(
-       <span class='fu'><a href='tablerSocialLink.html'>tablerSocialLink</a></span>(
-        <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"facebook"</span>,
-        <span class='kw'>href</span> <span class='kw'>=</span> <span class='st'>"https://www.facebook.com"</span>,
-        <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"facebook"</span>
-       ),
-       <span class='fu'><a href='tablerSocialLink.html'>tablerSocialLink</a></span>(
-        <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"twitter"</span>,
-        <span class='kw'>href</span> <span class='kw'>=</span> <span class='st'>"https://www.twitter.com"</span>,
-        <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"twitter"</span>
-       )
-      )
-     )
-    )
-   ),
-   <span class='kw'>server</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>) {}
- )
-}</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rinterface.github.io/tablerDash/'>tablerDash</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>   ui <span class='op'>=</span> <span class='fu'><a href='tablerDashPage.html'>tablerDashPage</a></span><span class='op'>(</span></span>
+<span class='r-in'>    navbar <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    footer <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    title <span class='op'>=</span> <span class='st'>"test"</span>,</span>
+<span class='r-in'>    body <span class='op'>=</span> <span class='fu'><a href='tablerDashBody.html'>tablerDashBody</a></span><span class='op'>(</span></span>
+<span class='r-in'>     <span class='fu'>tablerProfileCard</span><span class='op'>(</span></span>
+<span class='r-in'>      title <span class='op'>=</span> <span class='st'>"Peter Richards"</span>,</span>
+<span class='r-in'>      subtitle <span class='op'>=</span> <span class='st'>"Big belly rude boy, million</span>
+<span class='r-in'>      dollar hustler. Unemployed."</span>,</span>
+<span class='r-in'>      background <span class='op'>=</span> <span class='st'>"https://preview.tabler.io/demo/photos/ilnur-kalimullin-218996-500.jpg"</span>,</span>
+<span class='r-in'>      src <span class='op'>=</span> <span class='st'>"https://preview.tabler.io/demo/faces/male/16.jpg"</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='tablerSocialLinks.html'>tablerSocialLinks</a></span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='fu'><a href='tablerSocialLink.html'>tablerSocialLink</a></span><span class='op'>(</span></span>
+<span class='r-in'>        name <span class='op'>=</span> <span class='st'>"facebook"</span>,</span>
+<span class='r-in'>        href <span class='op'>=</span> <span class='st'>"https://www.facebook.com"</span>,</span>
+<span class='r-in'>        icon <span class='op'>=</span> <span class='st'>"facebook"</span></span>
+<span class='r-in'>       <span class='op'>)</span>,</span>
+<span class='r-in'>       <span class='fu'><a href='tablerSocialLink.html'>tablerSocialLink</a></span><span class='op'>(</span></span>
+<span class='r-in'>        name <span class='op'>=</span> <span class='st'>"twitter"</span>,</span>
+<span class='r-in'>        href <span class='op'>=</span> <span class='st'>"https://www.twitter.com"</span>,</span>
+<span class='r-in'>        icon <span class='op'>=</span> <span class='st'>"twitter"</span></span>
+<span class='r-in'>       <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>     <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'>   server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -205,7 +210,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

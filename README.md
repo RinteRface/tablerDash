@@ -23,26 +23,8 @@ install.packages("tablerDash")
 
 ## Demo
 
-### shiny server
-A current demo running on shiny server open source is available [here](https://rinterface.com/shiny/tablerDash/).
-(It uses echarts4r webGL components and might not render on several mobile devices.)
+`{tablerDash}` works on all the RStudio products. See a demo [on shinyapps.io](https://dgranjon.shinyapps.io/tablerDashDemo/).
 
-<br>
-
-<div class="row">
-<div class="card">
-<a href="https://rinterface.com/shiny/tablerDash/" target="_blank"><img src="man/figures/tablerDash_demo.png"></a>
-</div>
-</div>
-
-<br>
-
-### shinyapps.io, shiny-server pro and RStudio Connect
-tablerDash works on all the RStudio products:
-- [on shinyapps.io](https://dgranjon.shinyapps.io/tablerDashDemo/)
-- on RStudio Connect as well
-
-### Other Examples
 
 <div class="row">
 <div class="card">
