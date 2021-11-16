@@ -1,8 +1,8 @@
 library(shiny)
 library(tablerDash)
-library(shinyEffects)
 library(echarts4r)
 library(shinyWidgets)
+library(magrittr)
 
 # datas flowGl
 vectors <- expand.grid(x = -3:3, y = -3:3)
@@ -68,7 +68,7 @@ shiny::shinyApp(
       tablerDropdown(
         tablerDropdownItem(
           title = "Item 1 title",
-          href = "http://google.com",
+          href = "https://google.com",
           url = "https://image.flaticon.com/icons/svg/1301/1301804.svg",
           status = "danger",
           date = "now",
@@ -94,7 +94,6 @@ shiny::shinyApp(
     title = "tablerDash",
     body = tablerDashBody(
 
-      setZoom(class = "card"),
       chooseSliderSkin("Nice"),
 
       fluidRow(

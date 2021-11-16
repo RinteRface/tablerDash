@@ -1,8 +1,8 @@
 library(shiny)
 library(tablerDash)
-library(shinyEffects)
 library(echarts4r)
 library(shinyWidgets)
+library(magrittr)
 
 
 # datas flowGl
@@ -24,7 +24,7 @@ flowCard <- tablerCard(
   closable = FALSE,
   zoomable = FALSE,
   options = tagList(
-    tablerAvatar(status = "lime", url = "https://john-coene.com/img/profile.png"),
+    tablerAvatar(status = "lime", url = "https://preview.tabler.io/static/avatars/000m.jpg"),
     tablerTag(name = "build", addon = "passing", addonColor = "success")
   ),
   width = 12,
@@ -107,7 +107,6 @@ shiny::shinyApp(
     title = "tablerDash",
     body = tablerDashBody(
 
-      setZoom(class = "card"),
       chooseSliderSkin("Nice"),
       tablerTabItems(
         tablerTabItem(
