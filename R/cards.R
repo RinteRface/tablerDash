@@ -69,7 +69,6 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
 
   cardTag <- shiny::tags$div(
     class = cardCl,
-    style =  if (overflow) "max-height: 500px; overflow-y: auto;" else NULL,
     if (!is.null(status)) shiny::tags$div(class = statusCl),
     # header
     if (!is.null(title)) {
@@ -113,7 +112,11 @@ tablerCard <- function(..., title = NULL, options = NULL, footer = NULL,
       )
     },
     # body
-    shiny::tags$div(class = "card-body", ...),
+    shiny::tags$div(
+      class = "card-body",
+      style =  if (overflow) "max-height: 500px; overflow-y: auto; overflow-x: auto;" else NULL,
+      ...
+    ),
     # footer
     if (!is.null(footer)) shiny::tags$div(class = "card-footer", footer)
   )

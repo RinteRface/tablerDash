@@ -1,0 +1,93 @@
+
+# tablerDash <img src="https://rinterface.com/inst/images/tablerDash.svg" width=200 align="right" />
+
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/RinteRface/tablerDash/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/tablerDash/actions)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![cranlogs](https://cranlogs.r-pkg.org/badges/tablerDash)](https://cran.r-project.org/package=tablerDash)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://www.rpackages.io/package/tablerDash)
+<!-- badges: end -->
+
+> Tabler dashboard template for shiny with Bootstrap 4
+
+See <https://tabler.io> for the original template.
+
+## Installation
+
+This package is on CRAN:
+
+``` r
+# latest devel version
+devtools::install_github("RinteRface/tablerDash")
+# CRAN version
+install.packages("tablerDash")
+```
+
+## Demo
+
+<div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container" data-bslib-card-init data-full-screen="false" data-require-bs-caller="card()" data-require-bs-version="5" id="bslib-card-2175" style="margin: 0 auto; float: none;">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto;">
+<iframe class="html-fill-item" src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAdzgCMAnRRASwgGdSoAbbgCgA6YLnW5wGAESjsAFkNwACBnFRF2CgLwKCgsDNKlU7RAHoTDNuQYAzKATgYA5i1IyArnQwsi5y+Nv2ALTU0jCBBAxQECbyCkL6hsZmyqoYDMGhGEQMjkIAlHkCEEXcLIxQDACefLJslYUQpeVVfCJiktIyDU2RLXAEMhWk7AAsDN1lvdW1EJUA6iwAJo5wwxPN1TBQjhYG40UHEADECotQXOrW3ETUAOLcRQBu-aTZ6gA8gQpwAB6oUYsnBZFnwfpoFIEAMyISGKSrgqEwhowNwKT4KACMTxebwAJOwwejngRXgx2LjKtiSXj2PD0SiFAAqBR8DEQhTE0nkn4APQATHkmRycWSKezOXiflSubjiNcGGivtdHBiAAx8BhuCAsax8CAMG58CVkvKKDFm1UFQ4nAg8ChnBWoa6kIpncgfL7sOAARwwUnIfGkfvOcF0fNVGIAHIEIzGsWBTQog-7Q0Jw1HAhi+VD44m6PCtEIzpSE08eG44B6lBBsjA+GIII5XHw3ZXE+HFAA2BpFSpwCqK07nKAYayReAtkPg1vsRSPcuV8Hz7gV9g947aCqLdhFK43ADCW8HbXEh4YIKKCgUpBcYnBQgAYtc7twFPvBgwXXhL9pruwoKIcDgg+ACCAAyADKACiuA-gAXkQRBbIBwHgdBsEQFeRCoDeJDqFoXCOGBLCcIImFXteAHtCB85cAwNRcKQbj4XEYClPAsRuAwr6FnoBhGKYJioMojwsHA1AYCeDBeD4nDnCwBAmFAtEVOwJiqhpMAYAAVqguQJhhFGUYBDAACrbHqsBAbxdBuCw3CLLEUCLIsJD3mA-zsOwbD6YozmuRA+5EPK7nsG4BD2F5+Q-qaP7UEsrjglmhnfAMQyjAwADybiGDluh7i+0UQOuwlENY9lwGeizHlR4gAAoGuVYhVWRV7xYsiVaMlP43qQd68XVqziAoWAKR+27yD+YV0L1-WsQAQiwjgKHQcC8PCmqLEBdBEJUigwPZpQkD+RmubwA7uJw7QYAoACqEBwDATq7XAgKTeRdB2AA1jsRBatVvEJAJZjCXAoniZJtXSd4JhbTAPioDIRCvGp9kQFxgRfTwLAorwbCBHyUYAJxE52gQAKwaTpenvVe7AMAQ7lA0kQkiWJElSTJsOPT4ASViYWxiCYGKdtTvk9VDEFEAQLA8MREBfewrUUVJUsy3LbBfcrRnQPA7l8ztRBfbTRkKDIyjWEz-Es9QtujnY9CIV9GDEDAJtGQpbm8QbTtCCdCixeRV6q9LsvcPLWv+1euvWaxpDxQY4juxR5twJbgPW4JtscwnVgu0hydXp7mG8fHLhWH7QcBzFRTrkUtoNg6VU1SZ83Ki1P5IxYCFkDw4KmVgt0wXFCUyElfIpf0H7DGM2W5aQugN-aFRFXXG5oKgRQzJUzDbyB6DK3Z4JSVIsh1dsqZV9AjyfQqBFQ6fMgAHLKdrFFLO5MCVPA6OFwo9OMwzokQSoNwYcyhlzOGPhygQEWCYTm7BHjiyrtHZSABZCgqJ74mRfo8DB6M35GSkrg-BbgACS5A6xR1NiIF+eteIAAkkJwD-h7YgJdWJIw4t+FBpshBMO4dQq8gdTYqyhiQzBFDHqEJoQBOhschCmUrF+FKoii7sPcjtKUPC1EUUUcoyuuiGiiJEbIkyEgDSoFctQCAMjg4P0sdYiAUiqG8KIbeBRYAXGYmvB41hKcLZW0MIJRwiFHBiHzm7HRuiFBcR4pwzOZgcYX1HNweS7DIkmGLmpRBjhhaQgjPkiMkZVQjAwLk-xdNGLMXcmcRsSdom6NbO5Gs1BKmsVMjIEiChumuCAuVMkpBTiOJuJhFwj1DFqNMaIk+IybEuLsRROJQTgZZK2CsVJ6SSCZOySYXJRSMQHJKUTcpSD2lySYixIQIQGDakbO0xRXT1C9JkEBL07DqqLDmWMyh7Tmm8T7JwcQxZJkmNUWY9oFjsJOIWUIlWHj3LeMhL4vqLDGlqMed0l5QFXAsHPMM6Foyem-LAHC4xptyXCPBdYRCVhj4P06A+Wl4gZFSTIewyy9DWJbGUQaWITR3L-G-hQL80yxEmXZSQTlnithAoZluflZRBVQGFWQfI4KrzEFQJUCwjh9BXLAAAASkKJaqtxIgQG0iQRQ6YiagoDuC2aniT6dGTjtRYBZjKQs6PNIgHqyLUIGIhL0EFShbQYBBL6bBdBoL9eIYoBlqFSXMnQFxSs4XJoArCtx4r5HuQEWijVpsrh2UWFgQ0cKjJyjcDAWxlbTbtU6goWE9ajKlSapVLcRbdGq0Yh3HNujlwVnBCMFtA61FOvcky3gNxxA7nRTElWyhYEIjVN2mJjax5dT5K2iilKYlit0dW2tizRGbvBJ2ddoiCpVV3YetRx663jqMuerQY7F1EKhv2j9DbR7jyvROqGpkcZrTYJfH9MygMgdKA9bNEGJ0It4t4+MAHF0XJqbxHYcAKDtMXf81irT7XwfvT+5N0GwNwfgzQxDrFvE7oXVR9DLEn63TAmBVDMT8NCEBVYEFDH4NCDAtkR6PSjA1tOMFbI-8XBJngKQDjVa8IvFWFxJMiwWCoBIgpHy3xSikAwERiD+6f3GYPQpr14gyEQBpd+qjQ7PEYkhHyf+dp53maqecDDrE6krAYLh02xdanBTSekbyjgE3udOJWCIGncIcKEFmBQIQXA6aFT-YY-mX1-u3buqluWFDo3gBYAgVnUB5Xy0XCAZXSBkIBnHZGPAIKkgvpliiaTVrxKEFBMgw1ODZAvpuf4MtSAlki-ZpKGlLTmbsnParug2A0qKiZ+tpm8s5szamyhp7jJ5t4kozg7SS1LHLdQbbmrgo1qffB19ChL35akrZ+Dk6BrOjcxVhQCEkK1VQpBYez7TYED-N9rQoFfuRewnFlihFiKkXe3TBOAxSvlf+7otg1XavuQoLVAA+upzgdVnStdEe1ta7kCfIwAPxE9NuNrQA8h6RaMiQJrnmDVhQipWN7KO1FlWsCzy5tSoi+cM8t7na2qMKGeqQWb5WwB49IOT0VkWmPuQW0QanTGIJLE8WIawKj3s3e6mLhQNLkbDXvkREiC84faAuyem3bVsuYgng7pMpRwvuXsD1vz-GIPsDDZZqryOJeiKEEQOgXOQ98LAE-Gtq0FRlQUOHr0DBaLeA4IganoiDocNVIz02WwwRdUm-noytOFCU1VK71bH6a9GPy3XvdHHH1nYojdu73OHtblb+41F7kU1iEj1RgY-QvpaPNX9VASPrfG6vEIecFhapZ9YgANQqLLQC6hXj-yRtQTPvvF06CEPuSoMHw3zs96f5fc+wCmQtewA6Xl09CHcrAa-rFbj9jJC-zDX+Re1-zzYBg1jnpygnexIxiRPBl2tzl2HHVQNydyNwlyIGeBsGfH7kHjAO5wgOvRXGOwrWNxbxt3b3zynnSlnhyjmyEEcCgDcBWFiFeSWn0HcgKVVFQG0UbzBXeyINnySydw7yj3921wYGnx7wxTABoLoLgDXweAPw-SEFuFoJWAUBkIrH31LwUBz3BDz1d0Lwmx0N4KvHL0pht04IpQbzvRWwAyOzLUNCXlgQqCqhr1M33XJVMRT1QPBGsC1BJHTz4DRxykUD+nnkFBAH9mCOq1xHl0V0HGXXDUVz4DCN4R1BZACNIFxCx0Alxyt0V0FCeQXluVrH8KD3SOTytCrgAF990IicoojhxYj7RxAB9Qwkjs9SBbQyRgBFAj8wAnpfIekSjcQF8N8xBEwvlsIftoIABdf2CoxQA0GxKyFiUA9cJnSg2ogqe4Bo2BcQKCNKT8DKRI6hY0dQAAUgAD5Ti4U4Bsd9jhhQRBQLiric0biCpsdwk+A9p-4fhFBaRujJNxgFAnjrjsdRIwoeBscthUBtstCtA89NCoAi9MRFAThlRMQq9x11Mf5vIvYFARgUSFAkT4TPVzRvjwRYR-5PURh61ZAbhJiYIFATguktp602AsAhdY5ShYd-s5QpMtAdAAByI4SERzTsImcmAUxQIUkYcmAAdnJjoBGElIUCFNlJGH8gxGVKFIAkWCJjgCJi1KODgFVGsEhGsEjElNdyvCFOsFtOsDoGsENOsGw1VCJlVCdLODgE7E1KlKOGsBGE7EWFHUNMWFlIKT5FlMNKgErz5E7AFMb2cKBMuJBJ+Gx0RJIm23YCdBcHlk5KtxqF33pMTOBJeOx0qDTJ+AzJpOzNIFzPBC5IXlpOoCLLJVmLXjWPnlxDV22PDVujISON4TZWsyIEe1-Q6i3Wd3XXL08nIHVDSNxFeC4G4Ca36xWEUAUPmngJzRV14nZ0iiH1EUC14jdAAmkELThS2nYBixwnT37wa1fBXMiGUMPCGxcBLGoX3SqMOHCPWPSPsIdB7N2LuMONaNNj7AHBLN0RuOAsnHIEeOTNLP-IqA1A5PcnTEjHyCTOeKgux1eXOChKNAXFnFt2yEWGx1pCBRgE9ztAcJ93guwrURuLBLcAhIIr0LfUtDbO-KrhqPSMkOUPRDiKAunhAuoWgpEr4HopBP4tDCDEK3EAUmKMiJkpkMTCECuNLEqNWIUAqNriKDAAqKmKAA&amp;h=0" height="700" width="100%" style="border: 1px solid rgba(0,0,0,0.175); border-radius: .375rem;" allowfullscreen="" allow="autoplay" data-external="1"></iframe>
+</div>
+<bslib-tooltip placement="auto" bsOptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+<template>Expand</template>
+<button aria-expanded="false" aria-label="Expand card" class="bslib-full-screen-enter badge rounded-pill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"/></svg></button>
+</bslib-tooltip>
+<script data-bslib-card-init>bslib.Card.initializeAllCards();</script>
+</div>
+<p class="text-center mt-2">
+<a 
+class="btn btn-primary" 
+data-bs-toggle="collapse" 
+href="#demo-code" 
+role="button" 
+aria-expanded="false" 
+aria-controls="demo-code"> Toggle code </a>
+</p>
+
+<div id="demo-code" class="collapse">
+
+``` r
+```
+
+</div>
+
+<div class="row">
+
+<div class="card">
+
+<a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/6/626cbb941e2c3dfe543abde05f7e4097186811c6_2_690x431.png"></a>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+<div class="card">
+
+<a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/3/33061a47390f6fa1515302d7f05e05c1b6f3e458_2_690x431.jpeg"></a>
+
+</div>
+
+</div>
+
+<br>
+
+## Issues
+
+Issues are listed
+[here](https://github.com/RinteRface/tablerDash/issues).
+
+## Code of Conduct
+
+Please note that the tablerDash project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

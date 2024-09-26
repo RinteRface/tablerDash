@@ -4,8 +4,14 @@
 \alias{tablerDashPage}
 \title{Create a Boostrap 4 dashboard page}
 \usage{
-tablerDashPage(navbar = NULL, body = NULL, footer = NULL,
-  title = NULL, enable_preloader = FALSE, loading_duration = 2)
+tablerDashPage(
+  navbar = NULL,
+  body = NULL,
+  footer = NULL,
+  title = NULL,
+  enable_preloader = FALSE,
+  loading_duration = 2
+)
 }
 \arguments{
 \item{navbar}{Slot for \link{tablerDashNav}.}

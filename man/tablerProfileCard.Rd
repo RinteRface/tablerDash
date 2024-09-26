@@ -4,8 +4,14 @@
 \alias{tablerProfileCard}
 \title{Create a Boostrap 4 profile card}
 \usage{
-tablerProfileCard(title = NULL, subtitle = NULL, background = NULL,
-  src = NULL, socials = NULL, width = 4)
+tablerProfileCard(
+  title = NULL,
+  subtitle = NULL,
+  background = NULL,
+  src = NULL,
+  socials = NULL,
+  width = 4
+)
 }
 \arguments{
 \item{title}{Profile title.}

@@ -4,8 +4,7 @@
 \alias{tablerInfoCard}
 \title{Create a Boostrap 4 info card}
 \usage{
-tablerInfoCard(value, description = NULL, status, icon, href = NULL,
-  width = 4)
+tablerInfoCard(value, description = NULL, status, icon, href = NULL, width = 4)
 }
 \arguments{
 \item{value}{Card value.}

@@ -4,8 +4,14 @@
 \alias{tablerDropdownItem}
 \title{Create a Boostrap 4 dashboard dropdown container}
 \usage{
-tablerDropdownItem(..., title = NULL, href = NULL, url = NULL,
-  status = NULL, date = NULL)
+tablerDropdownItem(
+  ...,
+  title = NULL,
+  href = NULL,
+  url = NULL,
+  status = NULL,
+  date = NULL
+)
 }
 \arguments{
 \item{...}{Item content.}

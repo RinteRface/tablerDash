@@ -15,9 +15,10 @@ Description: 'R' interface to the 'Tabler' HTML template. See more here <https:/
      is available at <https://dgranjon.shinyapps.io/shinyMons/>.
 URL: https://rinterface.github.io/tablerDash/, https://github.com/RinteRface/tablerDash/ 
 BugReports: https://github.com/RinteRface/tablerDash/issues
-Imports: shiny, htmltools, knitr
-Suggests: shinyWidgets, shinyEffects, echarts4r
+Imports: shiny, htmltools
+Suggests: shinyWidgets, shinyEffects, echarts4r, knitr
 License: GPL (>= 2)
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 2.10)

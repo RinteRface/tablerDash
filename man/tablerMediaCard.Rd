@@ -4,8 +4,15 @@
 \alias{tablerMediaCard}
 \title{Create a Boostrap 4 media card}
 \usage{
-tablerMediaCard(..., title = NULL, date = NULL, href = NULL,
-  src = NULL, avatarUrl = NULL, width = 4)
+tablerMediaCard(
+  ...,
+  title = NULL,
+  date = NULL,
+  href = NULL,
+  src = NULL,
+  avatarUrl = NULL,
+  width = 4
+)
 }
 \arguments{
 \item{...}{Any other elements.}
