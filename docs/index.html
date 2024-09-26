@@ -4,183 +4,174 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Tabler API for Shiny • tablerDash</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/journal/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
-<meta property="og:title" content="Tabler API for Shiny">
-<meta property="og:description" content="R interface to the Tabler HTML template. See more here &lt;https://tabler.io&gt;. 
-    tablerDash is a light Bootstrap 4 dashboard template. There are different 
-     layouts available such as a one page dashboard or a multi page template,
-     where the navigation menu is contained in the navigation bar. A fancy example
-     is available at &lt;https://dgranjon.shinyapps.io/shinyMons/&gt;.">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
+<script src="extra.js"></script><meta property="og:title" content="Tabler API for Shiny">
+<meta name="description" content="R interface to the Tabler HTML template. See more here &lt;https://tabler.io&gt;. tablerDash is a light Bootstrap 4 dashboard template. There are different layouts available such as a one page dashboard or a multi page template, where the navigation menu is contained in the navigation bar. A fancy example is available at &lt;https://dgranjon.shinyapps.io/shinyMons/&gt;.">
+<meta property="og:description" content="R interface to the Tabler HTML template. See more here &lt;https://tabler.io&gt;. tablerDash is a light Bootstrap 4 dashboard template. There are different layouts available such as a one page dashboard or a multi page template, where the navigation menu is contained in the navigation bar. A fancy example is available at &lt;https://dgranjon.shinyapps.io/shinyMons/&gt;.">
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">tablerDash</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5.9000</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="reference/index.html">Reference</a>
-</li>
-<li>
-  <a href="news/index.html">Changelog</a>
-</li>
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="index.html">tablerDash</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.5.9000</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="active nav-item"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span></a></li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/RinteRface/tablerDash">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/RinteRface/tablerDash"><span class="fa fa-github fa-lg"></span></a></li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
-
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-<div id="tablerdash-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#tablerdash-" class="anchor"></a>tablerDash <img src="https://rinterface.com/inst/images/tablerDash.svg" width="200" align="right">
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="tablerdash-">tablerDash <img src="https://rinterface.com/inst/images/tablerDash.svg" width="200" align="right"><a class="anchor" aria-label="anchor" href="#tablerdash-"></a>
 </h1></div>
+<!-- badges: start -->
 
 <blockquote>
 <p>Tabler dashboard template for shiny with Bootstrap 4</p>
 </blockquote>
-<p>See <a href="https://tabler.io">https://tabler.io</a> for the original template.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<p>See <a href="https://tabler.io" class="external-link uri">https://tabler.io</a> for the original template.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>This package is on CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># latest devel version</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"RinteRface/tablerDash"</span><span class="op">)</span>
-<span class="co"># CRAN version</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tablerDash"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># latest devel version</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"RinteRface/tablerDash"</span><span class="op">)</span></span>
+<span><span class="co"># CRAN version</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tablerDash"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="demo" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demo" class="anchor"></a>Demo</h2>
-<p><a href="https://rinterface.github.io/tablerDash/">tablerDash</a> works on all the RStudio products. See a demo <a href="https://dgranjon.shinyapps.io/tablerDashDemo/">on shinyapps.io</a>.</p>
+<div class="section level2">
+<h2 id="demo">Demo<a class="anchor" aria-label="anchor" href="#demo"></a>
+</h2>
+<p><a href="https://rinterface.github.io/tablerDash/">tablerDash</a> works on all the RStudio products.</p>
+<div id="bslib-card-6424" class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container" data-bslib-card-init="" data-full-screen="false" data-require-bs-caller="card()" data-require-bs-version="5" style="margin: 0 auto; float: none;">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto;">
+<iframe class="html-fill-item" src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAdzgCMAnRRASwgGdSoAbbgCgA6EAATCBYLnW5wGAESjsAFuNxDRDOKiLthAXmEFBYRaVKp2iAPSWGbcgwBmUAnAwBzFqUUBXOhhZENnYyTi4AtNQKMGEEDFAQlipixqbmVjaaRBgMEVEYRAxu4gCUQqUQQtwsjFAMAJ58Smx15VU19XyS0nIKiq3VcR1wBIq1pOwALAz97Q1NEHUA6iwAJm5w4zODDTBQbram00LHEADEwitQXDoO3ETUAOLcQgBuw6QFOgA8YcJwAB6oeIrdy2FZ8f56YRhADMiBhuGEdShsPh5Rg3mEP2EAEZXu9PgASdiQ7FvAgfBjsQl1fEUonsZHYjHCABUwj4OOhwnJlOp-wAegAmYpsnkEqk07m8on-Ol8wnEO4MLG-O5uHEABj4DG8EBYDj4EAY9z4MqpxUROKtmuK5SE5wIPAolxVqDupCEl3I31+7DgAEcMPJyHwFMGrnAjELNTiABxhWOJvFgS3CcMhqPiGPxsI4oWwlNpujI-TiS601OvHjeOC+4QMCAFGB8aQQNxePjeutpmOIgBs9oWcFqqouVygGAccXgXcjUO77ERLxrdahK+4tfYQ8dtRW7CEt3uAGE92OujJTwxwWphKRPNIoeIAGJ3R7cYTH0YMT14W8EO52CgKQ4ChZ8AEEABkAGUAFFVBEYQAC8iCIXYQLAqC4IQ0QiFQe8SB0fQuDcSCWE4QRENEC8GHAlcuAYRouFIbwiOSKp4CSbwGA-MsUjMCxrFQDQXhYOBqAwGj-ECTgrhYAhLCgejanYSxNXUmAMAAK1QIpUxw0Q72A7oABU9iNWBQL4uhvBYbgViSKAVhWEgnzAIF2HYNg9MRJyXIgY8iGVNz2G8AgXE8kpb0tW9qFWLwoXzAzhm-cYpgAeW8MwsqMI93yiiAh2EogHDsuArxWc9jJkAAFE1SukCrKNEOKVgS-Qktve9SEfPiao2GRhCweTv33FRb1Cuhut65IACEWDcYQ6DgXhkV1FZQLoIg6kRGA7KqEhb0Mi4gu4UcfE4boMGEABVCA4Bgd1trgEFxsQuhnAAa32Ig9UqviTAE9JhLgUTxMk6qGGkywNpgQJUEUIgPlUuyIG4sJPp4FgMV4NgwiFeMAE5Cf7MIAFZ1O03S3tEdgGAINzAbSISRLEiSpICGGHsCUI60sXZpEsHF+ypnyush6CiAIFgeDIiBPvYZrDJoyXpdlthPqV47oHgNzea2ohPpp47hEUDQHEZ1JBMsahbanZx6FQz6MGIGBjeO+TXL4-WnfEI7hBiqijJAhhVZl7g5c1-3RB1qzklIOLTBkd3DLNuALYBq30lt9nE-sF20JT0RPZEPiE88ew-aD8pRHKIchCdNtXQqqqQ9m9UmtvRHbBQsgeChEysBu+DYvixREqFZKRjGSYGEy7LSCMRuXVqAr67OdN0CEeY6mYHfwPQJXbKhGj5CUGq9izIPoBeD6VWIyGz8UAA5JStcM1Y3JgOp4DRovhDpgzTOQMWagzZhDEO0NYaBBqBAFYlgpLsBeGLIOMclIAFkKCYgfiHV+LxMFo3fsdGieCCHeAAJLkBbNHE2khX66z4gACTQnAf+HtiCl2SIjTif5UEm3EMwnhNDa4GRNsHbopCsGUIekQ2hwF6Fx3ECZOsv5RFiOECXNyW05S8PUYZJRKiq56JribQOYjT4mlQC5agEBZHUUfpY6xEBpHUL4cQh8iiwAuNxHeDxbDU7m0tmYdIbhUJuGkAXN2ui9HCG4rxLhWdrDY0vlOM694OGRMsCXVSSC3BCxhLGfJsY4yagmBgXJ-jabMVYm5S47Zk7RL0d2NyTZqCVOSCZRQ5ENE6C8KBUqVJSAXEcfcEQngHpGPUWY9RFi8JOJcXYwycSgnMyybsdYqS5IZNdlkjhOTkFFJxIckphNynIPabJFibFxCREbN5dpSiuk6G6X0gBwwSCVRWCMmxGiqHtOaXxOoKiZAVkmWI6Z5iHFzNGQs4RysPFuW8TCXxPVWGNPUY87pLzFCgS8Cwa8wzoU-PGVEuFJjjrkoDmohwqF7An0fr0Z8tKZCyJouQjhFkGHJF2Cok0SQ2huSBD-Cgv4IXK0huykgnLPG7E4DIJ015+XVEFVAYVZAShqNEMQVAdRbBuBMNcsAAABeQolKoPDiBALSJBEQ5kJmCql-tpqeNPr0FOW0VilnETIJ+s0iCesojQkYqF-TQSqBtUOn02BGHQf6mQFR9I0JomZOgLjFZwuTcBWFbjxV0AUW5QRaLNUm1uLZFYWBTRwuOkqbwMBbFVpNq1dqwgEQNuOsVBq5U9zFr0SrZincc16I3LWKEExW2DpmQiviTLeD3BkAedFMTlYaDgSiLUPaYlNvHh1IUbbDKUuMRu6tQVa31oncdLdUJ+xHpLW+Cqe6xV6JrXWxZYjL36HHUu4hkMB1fsbWPCeN7IUhxMtjFabAr5-uA6ZMDVR7rZqg5O1FiKqG4naUuy5NS+L7DgBQdDMSAXJFaQ6xDj6oPJtgxBhDiHaFTuSN43di6aOYbYs-G6kFIJAYI-OQFwLryqvw3o8QkECgPQ0eYWtJ1gpeSGZZUgXHj0cHeBsbi6YVgsFQOReS3k-hVFIBgEjUGD1fuM4evd9iQ7kIgDS39NHh2eJxDCIUADnQLoU4ZFjtT4jrAYIJj+HDamnVqGELybgE3udEBtdgsQNMEU4eIfMwhIieB00K3+4w-MtQAzu8zjrz2GTRvAWwBArOoByrl4uEAyukHIf9eOSMeDQUpJfTLwgzrLXieIWCZBBqcAKJfAwaBnCeErBFnkq5ErqVtO52y89qtGDYDSgqf7TP7rJRuzNqaqGvuDvmviyjODtNLasCt1AdtapPS+3L77hDXtyzRWziHnVuRqh6NzFXkKoXQjNCCMER75erYBaqmE-tjbwnFtiJEyIUQ+7TROIxSvlYB+otg1XatuQoNVAA+upzgr2kateOu1laL2PQAH5CeGXswPIe-2aMmxIE1q4WHkihXCnWd7yOxElQcEzq5Xn6m+bALDgOH2yNLqeqQOb5WwC49IPj0VY3PN8UW0QVrLHoKrE8dIBwqiPs3c6lz4QNKkaDQfqRcii8RfPrPfTi92XcSTxF6ILGYW3IuB60Lsbx12DhpkIjq3RuxHiCIHQTndv+FgGfrW5aKoSrCFD-6Bg9EAgcEQJT46e1OGam9ybXYkIOpTdz8dan+gKaamd6LoPVf6erfBQ+rjNvzuGRu3d5HD29zN-cch-b1Vw80ZGMMT62iLW-VQAHrvkeVy2GqpT8QAA1WoMsQK9KIAAxG1B09Mb-YYcQx46hwYjQu93B+M8dMtewPanlU-iDcrAM-4gHgjipLf7Dz-DMrdz2wODcdB7DzF2NheNLlbrLhOBqvrg7obvTkQG8I4G+DTv-sjuLuosduWpWkbk3iLq3rnilDPBlFlPNuIG4FAN4OsEkDigtCYG5AUpqKgDonXlMmNpgdXtgSLr7lrgwBPpXkQSQesIvs8NvlBo-rwaBPwbWFvsXsIFnlCDnpXvnpNrIdXqIKXsIBTCLgwfXkgQ+g2sgaIKgadnwMvHArUBVKtsZpSiYtMknrAVCA4HqBSKnnwKjllIiL9AvKKCAP7G4dVoSHLgrmOCuhGgrnwJ4XwgaByM4aQISJjiBDjpbgrqKE8ovI2M2E4VVllISInnaP7AAL6UreEZHehQABEugyAprSAhE0IwCkAKrsDACIi75gCPQ+QaLpFRHT7L7SBphfJ4Qg5wQAC6uRiIJoNilkbEf+sEQ4x0BRUReUTwJRcCMgsE08P4s8lRfC5oOgAApAAHxbFwpwBY4rHjAQiii7H7E5qHF5RY7hJ8A7QAL-CIiMgNFBQFBnF7EHFY6iShQ8BY67CoA7bSH6A55SFQAF64iIjnDqi4gV4Trqa-xeRezCATCQnCDgkglerWgPFQgIgAJeoTANpKD3B9HwTCDnBdIbQNpsBYDeZxxVAw75ZKgFBQiGAADkpwMIjm-YhMZMrJiI7JEwZMAA7GTHQBMHycIOyUKRMH5DiBKeycBCsITHAITPKacHAJqA4DCA4HGHyZXqIOyQ4EaQ4HQA4GqQ4LhpqITJqOaZcHAP2HKfyacA4BMP2CsGOmqSsEKQUkKEKWqVAOXkKP2KyQwWYcIOcZ8f8FjmCeRDtuwO6J4HLHSZbo0BviSWGRGZcVjnUNGf8LGYSQmaQEmVCPSYvESdQOmWSrkevNMQQRkargsRGjdOQusdBv7tZkQI9v+m1Nuo7huioR5OQNqJEYSB8FwNwE1v1usIiI-rNOATmsrqzmFBFP3mIponxEUR9P6P4lFjFvhKnm5CZA1h+JOXEOsJ+ENtLKQJWDQpSnkScF4XWVEUYa6I2UsccWsaEWIkCqOJmXoocR+XOOQO8Rcf+Ucc6MYYxJaueXxDmHGCUOGR8VmTilcP8WaKuEuAYKhNeFjoyHKjAO7hBa6AhX+eoocd8d4L8WhfIR+raNWQ+UHDMYSMQaQaBNiIEe+alJ+TQgBVxXwCBZ8SxesGGOwBgIVjIPJGkT4UJXAPwWmOIPsVWEHPeRUIhDkWUEIGADkf0UAA&amp;h=0" height="700" width="100%" style="border: 1px solid rgba(0,0,0,0.175); border-radius: .375rem;" allowfullscreen allow="autoplay" data-external="1">
+</iframe>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()"><template>Expand</template><button aria-expanded="false" aria-label="Expand card" class="bslib-full-screen-enter badge rounded-pill"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg></button> </bslib-tooltip><script data-bslib-card-init>bslib.Card.initializeAllCards();</script>
+</div>
+<p class="text-center mt-2">
+<a class="btn btn-primary" data-bs-toggle="collapse" href="#demo-code" role="button" aria-expanded="false" aria-controls="demo-code"> Toggle code </a>
+</p>
+<div id="demo-code" class="collapse">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"></code></pre></div>
+</div>
 <div class="row">
 <div class="card">
-<p><a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/6/626cbb941e2c3dfe543abde05f7e4097186811c6_2_690x431.png"></a></p>
+<p><a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank" class="external-link"><img src="https://community.rstudio.com/uploads/default/optimized/2X/6/626cbb941e2c3dfe543abde05f7e4097186811c6_2_690x431.png"></a></p>
 </div>
 </div>
 <p><br></p>
 <div class="row">
 <div class="card">
-<p><a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/3/33061a47390f6fa1515302d7f05e05c1b6f3e458_2_690x431.jpeg"></a></p>
+<p><a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank" class="external-link"><img src="https://community.rstudio.com/uploads/default/optimized/2X/3/33061a47390f6fa1515302d7f05e05c1b6f3e458_2_690x431.jpeg"></a></p>
 </div>
 </div>
 <p><br></p>
 </div>
-<div id="issues" class="section level2">
-<h2 class="hasAnchor">
-<a href="#issues" class="anchor"></a>Issues</h2>
-<p>Issues are listed <a href="https://github.com/RinteRface/tablerDash/issues">here</a>.</p>
+<div class="section level2">
+<h2 id="issues">Issues<a class="anchor" aria-label="anchor" href="#issues"></a>
+</h2>
+<p>Issues are listed <a href="https://github.com/RinteRface/tablerDash/issues" class="external-link">here</a>.</p>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the tablerDash project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that the tablerDash project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
-<h2>Links</h2>
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=tablerDash">https://​cloud.r-project.org/​package=tablerDash</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/RinteRface/tablerDash/">https://​github.com/​RinteRface/​tablerDash/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/RinteRface/tablerDash/issues">https://​github.com/​RinteRface/​tablerDash/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=tablerDash" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/RinteRface/tablerDash/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/RinteRface/tablerDash/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>GPL (&gt;= 2)</li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing tablerDash</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>David Granjon <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/RinteRface/tablerDash/actions"><img src="https://github.com/RinteRface/tablerDash/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://cran.r-project.org/package=tablerDash"><img src="https://www.r-pkg.org/badges/version/tablerDash" alt="CRAN status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg" alt="lifecycle"></a></li>
-<li><a href="https://cran.r-project.org/package=tablerDash"><img src="https://cranlogs.r-pkg.org/badges/tablerDash" alt="cranlogs"></a></li>
-<li><a href="https://www.rpackages.io/package/tablerDash"><img src="https://cranlogs.r-pkg.org/badges/grand-total/tablerDash" alt="total"></a></li>
+<li><a href="https://github.com/RinteRface/tablerDash/actions" class="external-link"><img src="https://github.com/RinteRface/tablerDash/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://cran.r-project.org/package=tablerDash" class="external-link"><img src="https://www.r-pkg.org/badges/version/tablerDash" alt="CRAN status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg" alt="lifecycle"></a></li>
+<li><a href="https://cran.r-project.org/package=tablerDash" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/tablerDash" alt="cranlogs"></a></li>
+<li><a href="https://www.rpackages.io/package/tablerDash" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/tablerDash" alt="total"></a></li>
 </ul>
 </div>
-</div>
+
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
+    <footer><div class="pkgdown-footer-left">
   <p>Developed by David Granjon.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
-  
+
+
 
 
   </body>

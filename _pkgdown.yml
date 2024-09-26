@@ -1,3 +1,8 @@
+template:
+  bootstrap: 5
+
+url: https://rinterface.github.io/tablerDash/
+
 reference:
 - title: Basic dashboard functions
   desc: Dashboard skeleton functions
@@ -55,10 +60,6 @@ reference:
   desc: tablerDash showcase
   contents:
   - '`tablerDashGallery`'
-
-template:
-  params:
-    bootswatch: journal
 
 navbar:
   structure:

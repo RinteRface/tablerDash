@@ -4,8 +4,14 @@
 \alias{tablerTag}
 \title{Create a Boostrap 4 tag}
 \usage{
-tablerTag(name, href = NULL, rounded = FALSE, color = NULL,
-  addon = NULL, addonColor = NULL)
+tablerTag(
+  name,
+  href = NULL,
+  rounded = FALSE,
+  color = NULL,
+  addon = NULL,
+  addonColor = NULL
+)
 }
 \arguments{
 \item{name}{Tag name.}
