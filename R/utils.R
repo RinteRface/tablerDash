@@ -91,7 +91,7 @@ code_chunk <- function(output, language = "r") {
 }
 
 print_r_code <- function(name) {
-  path <- system.file(sprintf("examples/shinylive/%s/app.R", name), package = "shiny386")
+  path <- system.file(sprintf("examples/shinylive/%s/app.R", name), package = "tablerDash")
   lines <- readLines(path)
   to_remove <- grep("webr::", lines)
   code_chunk(cat(paste(lines[-to_remove], collapse = "\n")))
