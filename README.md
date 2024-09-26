@@ -30,9 +30,6 @@ install.packages("tablerDash")
 
 ## Demo
 
-`{tablerDash}` works on all the RStudio products. See a demo [on
-shinyapps.io](https://dgranjon.shinyapps.io/tablerDashDemo/).
-
 <div class="row">
 
 <div class="card">
