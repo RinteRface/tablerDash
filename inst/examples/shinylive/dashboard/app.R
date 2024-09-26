@@ -1,4 +1,4 @@
-#webr::install("tablerDash", repos = c("https://rinterface.github.io/rinterface-wasm-cran/", "https://repo.r-wasm.org"))
+webr::install("tablerDash", repos = c("https://rinterface.github.io/rinterface-wasm-cran/", "https://repo.r-wasm.org"))
 
 library(shiny)
 library(tablerDash)
