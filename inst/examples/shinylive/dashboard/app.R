@@ -1,10 +1,11 @@
-webr::install("tablerDash", repos = c("https://rinterface.github.io/rinterface-wasm-cran/", "https://repo.r-wasm.org"))
+#webr::install("tablerDash", repos = c("https://rinterface.github.io/rinterface-wasm-cran/", "https://repo.r-wasm.org"))
 
 library(shiny)
 library(tablerDash)
 library(echarts4r)
 library(shinyWidgets)
 library(magrittr)
+library(palmerpenguins)
 
 
 # datas flowGl
@@ -14,32 +15,24 @@ vectors$sx <- vectors$y
 vectors$sy <- mu * (1 - vectors$x^2) * vectors$y - vectors$x
 vectors$color <- log10(runif(nrow(vectors), 1, 10))
 
-# calendar plot
-dates <- seq.Date(as.Date("2018-01-01"), as.Date("2018-12-31"), by = "day")
-values <- rnorm(length(dates), 20, 6)
-
-year <- data.frame(date = dates, values = values)
-
 # cards
 flowCard <- tablerCard(
   title = "FlowGl Chart",
   closable = FALSE,
-  zoomable = FALSE,
+  zoomable = TRUE,
   options = tagList(
-    tablerAvatar(status = "lime", url = "https://preview.tabler.io/static/avatars/000m.jpg"),
-    tablerTag(name = "build", addon = "passing", addonColor = "success")
+    tablerAvatar(status = "lime", url = "https://preview.tabler.io/static/avatars/000m.jpg")
   ),
   width = 12,
-  echarts4rOutput("flowGl")
+  echarts4rOutput("flowGl"),
+  footer = tablerTag(name = "build", addon = "passing", addonColor = "success")
 )
 
 profileCard <- tablerProfileCard(
   width = 12,
-  title = "Peter Richards",
-  subtitle = "Big belly rude boy, million
-      dollar hustler. Unemployed.",
-  background = "https://preview.tabler.io/demo/photos/ilnur-kalimullin-218996-500.jpg",
-  src = "https://preview.tabler.io/demo/faces/male/16.jpg",
+  title = "Dyann Escala",
+  subtitle = "Mechanical Systems Engineer",
+  src = "https://preview.tabler.io/static/photos/finances-us-dollars-and-bitcoins-currency-money.jpg",
   tablerSocialLinks(
     tablerSocialLink(
       name = "facebook",
@@ -54,20 +47,12 @@ profileCard <- tablerProfileCard(
   )
 )
 
-
-calendarCard <- tablerBlogCard(
-  horizontal = TRUE,
-  width = 12,
-  echarts4rOutput("calendar")
-)
-
-
 # app
 shiny::shinyApp(
   ui = tablerDashPage(
     navbar = tablerDashNav(
       id = "mymenu",
-      src = "https://preview.tabler.io/demo/brand/tabler.svg",
+      src = "https://raw.githubusercontent.com/tabler/tabler/dev/src/static/logo.svg",
       navMenu = tablerNavMenu(
         tablerNavMenuItem(
           tabName = "Home",
@@ -84,13 +69,11 @@ shiny::shinyApp(
         tablerDropdownItem(
           title = "Item 1 title",
           href = "http://google.com",
-          url = "https://image.flaticon.com/icons/svg/1301/1301804.svg",
           status = "danger",
           date = "now",
           "This is the first dropdown item"
         ),
         tablerDropdownItem(
-          url = "https://image.flaticon.com/icons/svg/1301/1301809.svg",
           status = "warning",
           "This is the second dropdown item",
           date = "yesterday"
@@ -104,7 +87,7 @@ shiny::shinyApp(
     footer = tablerDashFooter(
       tablerIcon(name = "maestro", lib = "payment"),
       tablerIcon(name = "mastercard", lib = "payment"),
-      copyrights = "@David Granjon, 2019"
+      copyrights = "@David Granjon, 2024"
     ),
     title = "tablerDash",
     body = tablerDashBody(
@@ -115,22 +98,25 @@ shiny::shinyApp(
           tabName = "Home",
           fluidRow(
             column(
-              width = 3,
+              width = 4,
               profileCard,
-              tablerStatCard(
-                value = 43,
-                title = "Followers",
-                trend = -10,
-                width = 12
-              )
+              numericInput(
+                inputId = "totalStorage",
+                label = "Enter storage capacity",
+                value = 1000),
+              uiOutput("info")
             ),
             column(
-              width = 6,
+              width = 8,
               flowCard
-            ),
+            )
+          ),
+          fluidRow(
             column(
-              width = 3,
+              width = 8,
               tablerCard(
+                status = "primary",
+                statusSide = "top",
                 width = 12,
                 tablerTimeline(
                   tablerTimelineItem(
@@ -146,105 +132,75 @@ shiny::shinyApp(
                 consectetur adipisicing elit."
                   )
                 )
-              ),
-              tablerInfoCard(
-                value = "132 sales",
-                status = "danger",
-                icon = "dollar-sign",
-                description = "12 waiting payments",
+              )
+            ),
+            column(
+              width = 4,
+              tablerStatCard(
+                value = 43,
+                title = "Followers",
+                trend = -10,
                 width = 12
-              ),
-              numericInput(
-                inputId = "totalStorage",
-                label = "Enter storage capacity",
-                value = 1000),
-              uiOutput("info")
+              )
             )
           )
         ),
         tablerTabItem(
           tabName = "Test",
-          fluidRow(
-            column(
-              width = 6,
-              tablerCard(
-                title = "Plots",
-                zoomable = FALSE,
-                closable = FALSE,
-                options = tagList(
-                  switchInput(
-                    inputId = "enable_distPlot",
-                    label = "Plot?",
-                    value = TRUE,
-                    onStatus = "success",
-                    offStatus = "danger"
-                  )
-                ),
-                plotOutput("distPlot"),
-                status = "info",
-                statusSide = "left",
+          tablerCard(
+            title = "Plots",
+            plotOutput("distPlot"),
+            status = "info",
+            statusSide = "left",
+            width = 12,
+            footer = tagList(
+              column(
                 width = 12,
-                footer = tagList(
-                  column(
-                    width = 12,
-                    align = "center",
-                    sliderInput(
-                      "obs",
-                      "Number of observations:",
-                      min = 0,
-                      max = 1000,
-                      value = 500
-                    )
-                  )
-                )
-              )
-            ),
-            column(
-              width = 6,
-              tablerCard(
-                title = "Tables",
-                checkboxGroupInput(
-                  "variable",
-                  "Variables to show:",
-                  c("Cylinders" = "cyl",
-                    "Transmission" = "am",
-                    "Gears" = "gear"
-                  ),
-                  inline = TRUE
-                ),
-                tableOutput("data"),
-                width = 12,
-                overflow = TRUE
-              ),
-              fluidRow(
-                column(
-                  width = 6,
-                  echarts4rOutput("gauge", height = "300px")
-                ),
-                column(
-                  width = 6,
-                  sliderInput(
-                    "gaugeVal",
-                    "Gauge Value:",
-                    min = 0,
-                    max = 100,
-                    value = 50
-                  )
+                align = "center",
+                sliderInput(
+                  "obs",
+                  "Number of observations:",
+                  min = 0,
+                  max = 1000,
+                  value = 500
                 )
               )
             )
           ),
-          fluidRow(calendarCard)
+          tablerCard(
+            title = "Tables",
+            selectInput(
+              "variable",
+              "Variables to show:",
+              choices = colnames(penguins),
+              selected = colnames(penguins),
+              multiple = TRUE
+            ),
+            tableOutput("data"),
+            width = 12,
+            overflow = TRUE
+          ),
+          tablerCard(
+            width = 12,
+            echarts4rOutput("gauge", height = "300px"),
+            sliderInput(
+              "gaugeVal",
+              "Gauge Value:",
+              min = 0,
+              max = 100,
+              value = 50
+            )
+          )
         )
       )
     )
   ),
   server = function(input, output) {
     output$distPlot <- renderPlot({
-      if (input$enable_distPlot) hist(rnorm(input$obs))
+      hist(rnorm(input$obs))
     })
     output$data <- renderTable({
-      mtcars[, c("mpg", input$variable), drop = FALSE]
+      penguins[, input$variable, drop = FALSE]
     }, rownames = TRUE)
 
     output$flowGl <- renderEcharts4r({
@@ -279,20 +235,9 @@ shiny::shinyApp(
       )
     })
 
-
-    output$calendar <- renderEcharts4r({
-      year %>%
-        e_charts(date) %>%
-        e_calendar(range = "2018") %>%
-        e_heatmap(values, coord_system = "calendar") %>%
-        e_visual_map(max = 30)
-    })
-
-
     output$gauge <- renderEcharts4r({
       e_charts() %>%
         e_gauge(as.numeric(input$gaugeVal), "%")
     })
-
   }
 )

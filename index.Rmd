@@ -43,8 +43,6 @@ install.packages("tablerDash")
 
 ## Demo
 
-`{tablerDash}` works on all the RStudio products.
-
 ```{r dashboard-code, eval=TRUE, echo=FALSE}
 card(
   tablerDash:::create_app_link(tablerDash:::shinylive_links["inst/examples/shinylive/dashboard"], header = FALSE),
