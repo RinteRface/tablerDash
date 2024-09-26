@@ -5,14 +5,12 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/RinteRface/tablerDash/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/tablerDash/actions)
+[![R-CMD-check](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/tablerDash)](https://cran.r-project.org/package=tablerDash)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://www.rpackages.io/package/tablerDash)
-[![R-CMD-check](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 > Tabler dashboard template for shiny with Bootstrap 4
