@@ -68,7 +68,7 @@ shiny::shinyApp(
       tablerDropdown(
         tablerDropdownItem(
           title = "Item 1 title",
-          href = "http://google.com",
+          href = "https://google.com",
           status = "danger",
           date = "now",
           "This is the first dropdown item"

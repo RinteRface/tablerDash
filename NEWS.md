@@ -1,8 +1,10 @@
-# tablerDash 0.1.5.9000
+# tablerDash 0.1.5
+
+- Fixed few CRAN NOTES.
 
 ## Documentation
 - Upgrade pkgdown setup.
-- Added shinylive support.
+- Add shinylive support.
 
 ## Bug Fix
 - Resizing a `tablerCard()` triggers the shown javascript event, telling shiny to 

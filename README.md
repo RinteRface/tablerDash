@@ -8,9 +8,9 @@
 [![R-CMD-check](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RinteRface/tablerDash/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/tablerDash)](https://cran.r-project.org/package=tablerDash)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/tablerDash)](https://cran.r-project.org/package=tablerDash)
-[![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://www.rpackages.io/package/tablerDash)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/tablerDash)](https://cran.r-project.org/package=tablerDash)
 <!-- badges: end -->
 
 > Tabler dashboard template for shiny with Bootstrap 4
@@ -34,7 +34,7 @@ install.packages("tablerDash")
 
 <div class="card">
 
-<a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/6/626cbb941e2c3dfe543abde05f7e4097186811c6_2_690x431.png"></a>
+<a href="https://forum.posit.co/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/6/626cbb941e2c3dfe543abde05f7e4097186811c6_2_690x431.png"></a>
 
 </div>
 
@@ -46,7 +46,7 @@ install.packages("tablerDash")
 
 <div class="card">
 
-<a href="https://community.rstudio.com/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/3/33061a47390f6fa1515302d7f05e05c1b6f3e458_2_690x431.jpeg"></a>
+<a href="https://forum.posit.co/t/shiny-contest-submission-gotta-catch-em-almost-all/25284" target="_blank"><img src="https://community.rstudio.com/uploads/default/optimized/2X/3/33061a47390f6fa1515302d7f05e05c1b6f3e458_2_690x431.jpeg"></a>
 
 </div>
 
